@@ -199,11 +199,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 @keyframes iconsTextAnimation {
     0%   {color: #ff9800;}
     25%  {color: #d2be0e;}
-    50%  {color: #673ab7 ;}
+    50%  {color: #00ffff ;}
     75%  {color: #2196F3 ;}
     100% {color: #4CAF50;}
   }
-.w3-text-teal,.w3-hover-text-teal:hover{ animation-name: iconsTextAnimation;
+.w3-text-teal,.w3-hover-text-teal:hover{ animation-name: iconsTextAnimation;animation-timing-function: ease;
     animation-duration: 4s;animation-iteration-count: infinite;animation-delay: -1s;animation-direction: alternate;}
 .w3-text-yellow,.w3-hover-text-yellow:hover{color:#d2be0e!important}
 .w3-text-white,.w3-hover-text-white:hover{color:#fff!important}

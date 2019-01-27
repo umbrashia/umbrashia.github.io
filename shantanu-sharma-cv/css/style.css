@@ -96,7 +96,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}.w3-top{top:0}.w3-bottom{bottom:0}
 .w3-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
 .w3-display-topleft{position:absolute;left:0;top:0}.w3-display-topright{position:absolute;right:0;top:0}
-.w3-display-bottomleft{position:absolute;left:0;bottom:0}.w3-display-bottomright{position:absolute;right:0;bottom:0}
+.w3-display-bottomleft{position:absolute;left:0;bottom:0;right:0; background-color: #03040699;padding-top: 5px !important;}.w3-display-bottomright{position:absolute;right:0;bottom:0}
 .w3-display-middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
 .w3-display-left{position:absolute;top:50%;left:0%;transform:translate(0%,-50%);-ms-transform:translate(-0%,-50%)}
 .w3-display-right{position:absolute;top:50%;right:0%;transform:translate(0%,-50%);-ms-transform:translate(0%,-50%)}
@@ -166,7 +166,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
 .w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#f44336!important}
 .w3-sand,.w3-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
-.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.w3-teal,.w3-hover-teal:hover{background-color:#009688!important}
 .w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
 .w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}
 .w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#000!important}
@@ -196,7 +196,15 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-text-deep-purple,.w3-hover-text-deep-purple:hover{color:#673ab7!important}
 .w3-text-red,.w3-hover-text-red:hover{color:#f44336!important}
 .w3-text-sand,.w3-hover-text-sand:hover{color:#fdf5e6!important}
-.w3-text-teal,.w3-hover-text-teal:hover{color:#009688!important}
+@keyframes iconsTextAnimation {
+    0%   {color: #ff9800;}
+    25%  {color: #d2be0e;}
+    50%  {color: #673ab7 ;}
+    75%  {color: #2196F3 ;}
+    100% {color: #4CAF50;}
+  }
+.w3-text-teal,.w3-hover-text-teal:hover{ animation-name: iconsTextAnimation;
+    animation-duration: 4s;animation-iteration-count: infinite;animation-delay: -1s;animation-direction: alternate;}
 .w3-text-yellow,.w3-hover-text-yellow:hover{color:#d2be0e!important}
 .w3-text-white,.w3-hover-text-white:hover{color:#fff!important}
 .w3-text-black,.w3-hover-text-black:hover{color:#000!important}

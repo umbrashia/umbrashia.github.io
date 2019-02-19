@@ -361,6 +361,33 @@
                             </div>
                         </div>
 
+                        <div class="card-group">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">shira 24</h5>
+                                        <p class="card-text">Online Live Audio Radio Streaming
+                                            <br /><small>Using Python3.6, JS, Jquery, Mysql, PHP etc.</small></p>
+                                    </div>
+                                </div>
+    
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">EBIKEFIND </h5>
+                                        <p class="card-text">Enhence Own bussinuss
+                                            <br /><smalle>Commerce eBike sale/purchase based website. some feature have user, users-plus professional users/sellers etc on advance jQuery and PHP.  </small></p>
+                                    </div>
+                                </div>
+    
+    
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Triplets </h5>
+                                        <p class="card-text">Sell/Purchase/Rent Property
+                                            <br /><small>Using ANGULAR-6, JS, Jquery, Mysql, PHP etc.</small></p>
+                                    </div>
+                                </div>
+                            </div>
+
                     </div>
                 </div>
 
@@ -386,6 +413,15 @@
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9"></script>
     <script>
+        var colorStars=[
+            {color:"#ffe100",stroke:"#7b78b3"},
+            {color:"#7f5900",stroke:"#7b78b3"},
+            {color:"#ff0000",stroke:"#7b78b3"},
+            {color:"#ed48c6",stroke:"#ff0000"},
+            {color:"#9797ed",stroke:"#000000"},
+            {color:"#007f61",stroke:"#ed48c6"},
+           
+        ];
         for (let index = 0; index < 5; index++)
         particlesJS("particles-js"+index, 
         {
@@ -398,13 +434,13 @@
       }
     },
     "color": {
-      "value": "#9797ed"
+      "value": colorStars[index].color
     },
     "shape": {
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#000000"
+        "color": colorStars[index].stroke
       },
       "polygon": {
         "nb_sides": 4
@@ -438,13 +474,13 @@
     "line_linked": {
       "enable": false,
       "distance": 150,
-      "color": "#cf4b4b",
+      "color":  colorStars[index].stroke,
       "opacity": 0.4,
       "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 1,
+      "speed": 5,
       "direction": "none",
       "random": true,
       "straight": false,

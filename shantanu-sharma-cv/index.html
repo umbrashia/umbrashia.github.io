@@ -67,39 +67,40 @@
     a {
         font-family: "Roboto", sans-serif
     }
+
     /* ---- reset ---- */
 
-body {
-  margin: 0;
-  background-color: #17182f;
-}
-
-canvas {
-  display: block;
-  vertical-align: bottom;
-}
+    canvas {
+        display: block;
+        vertical-align: bottom;
+    }
 
 
-/* ---- particles.js container ---- */
+    /* ---- particles.js container ---- */
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    .particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        
+        /* background-color: #fff; */
+    } 
 }
 </style>
 
 <body class="w3-light-grey">
-        <div id="particles-js"></div>
-    <br />
+                <br/>
+    
     <!-- Page Container -->
     <div class="container">
         <div class="row  justify-content">
             <div class="col-md-4">
                 <div class="card">
+                        <div id="particles-js4" class="particles-js"></div>
                     <img class="card-img-top" src="images/shantanu-sharma-cv-1.jpg" alt="Shantanu Sharma CV"
                         title="Shananu Sharma CV">
                     <div class="card-body">
+                        
                         <h5 class="card-title">SHANTANU SHARMA (Software Engg)</h5>
                         <p class="card-text">To secure a job in the IT Industry where I can utilize my knowledge for the
                             organization’s growth.</p>
@@ -246,10 +247,12 @@ canvas {
             </div>
 
             <div class="col-md-8 infoPanel">
+
                 <div class=""></div>
                 <div class="card">
-
+                        <div id="particles-js0" class="particles-js"></div>
                     <div class="card-body">
+                           
                         <h5 class="card-title text-success">About Me</h5>
                         <p class="card-text">
                             I Having More Than 3 Year 9 Months Of Experience On Enterprises Web Application Development
@@ -267,7 +270,7 @@ canvas {
 
 
                 <div class="card cardSpacing">
-
+                        <div id="particles-js1" class="particles-js"></div>
                     <div class="card-body">
                         <h5 class="card-title  text-success">Employment Experience</h5>
 
@@ -307,6 +310,7 @@ canvas {
 
 
                 <div class="card cardSpacing">
+                        <div id="particles-js2" class="particles-js"></div>
                     <div class="card-body">
                         <h5 class="card-title  text-success">Responsibilities</h5>
 
@@ -323,7 +327,7 @@ canvas {
                 </div>
 
                 <div class="card cardSpacing">
-
+                        <div id="particles-js3" class="particles-js"></div>
                     <div class="card-body">
                         <h5 class="card-title  text-success">Projcts</h5>
 
@@ -381,27 +385,29 @@ canvas {
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9"></script>
-        <script>
-        particlesJS("particles-js", {
+    <script>
+        for (let index = 0; index < 5; index++)
+        particlesJS("particles-js"+index, 
+        {
   "particles": {
     "number": {
-      "value": 355,
+      "value": 160,
       "density": {
         "enable": true,
-        "value_area": 789.1476416322727
+        "value_area": 200
       }
     },
     "color": {
-      "value": "#dc3545"
+      "value": "#9797ed"
     },
     "shape": {
       "type": "circle",
       "stroke": {
         "width": 0,
-        "color": "#dc3545"
+        "color": "#000000"
       },
       "polygon": {
-        "nb_sides": 5
+        "nb_sides": 4
       },
       "image": {
         "src": "img/github.svg",
@@ -410,35 +416,35 @@ canvas {
       }
     },
     "opacity": {
-      "value": 0.48927153781200905,
-      "random": false,
+      "value": 1,
+      "random": true,
       "anim": {
         "enable": true,
-        "speed": 0.2,
+        "speed": 1,
         "opacity_min": 0,
         "sync": false
       }
     },
     "size": {
-      "value": 2,
+      "value": 3,
       "random": true,
       "anim": {
-        "enable": true,
-        "speed": 2,
-        "size_min": 0,
+        "enable": false,
+        "speed": 4,
+        "size_min": 0.3,
         "sync": false
       }
     },
     "line_linked": {
       "enable": false,
       "distance": 150,
-      "color": "#ffffff",
+      "color": "#000000",
       "opacity": 0.4,
       "width": 1
     },
     "move": {
       "enable": true,
-      "speed": 0.2,
+      "speed": 1,
       "direction": "none",
       "random": true,
       "straight": false,
@@ -447,7 +453,7 @@ canvas {
       "attract": {
         "enable": false,
         "rotateX": 600,
-        "rotateY": 1200
+        "rotateY": 600
       }
     }
   },
@@ -456,30 +462,30 @@ canvas {
     "events": {
       "onhover": {
         "enable": true,
-        "mode": "bubble"
+        "mode": "grab"
       },
       "onclick": {
         "enable": true,
-        "mode": "push"
+        "mode": "remove"
       },
       "resize": true
     },
     "modes": {
       "grab": {
-        "distance": 400,
+        "distance": 100,
         "line_linked": {
           "opacity": 1
         }
       },
       "bubble": {
-        "distance": 83.91608391608392,
-        "size": 1,
-        "duration": 3,
-        "opacity": 1,
+        "distance": 250,
+        "size": 0,
+        "duration": 2,
+        "opacity": 0,
         "speed": 3
       },
       "repulse": {
-        "distance": 200,
+        "distance": 400,
         "duration": 0.4
       },
       "push": {
@@ -492,7 +498,7 @@ canvas {
   },
   "retina_detect": true
 });
-        </script>
+    </script>
 </body>
 
 </html>

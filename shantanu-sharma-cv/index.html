@@ -67,9 +67,11 @@
     a {
         font-family: "Roboto", sans-serif
     }
-    body{
+
+    body {
         background-color: #f2f2f2;
     }
+
     /* ---- reset ---- */
 
     canvas {
@@ -84,34 +86,39 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        
+
         /* background-color: #fff; */
-    } 
-    .list-group-item{
+    }
+
+    .list-group-item {
         position: inherit;
     }
-    .with-relative{
+
+    .with-relative {
         position: relative;
+    }
+    .card{
+        position: inherit !important;
     }
 </style>
 
 <body class="w3-light-grey">
-                <br/>
-    
+    <br />
+
     <!-- Page Container -->
     <div class="container">
         <div class="row  justify-content">
             <div class="col-md-4">
                 <div class="card">
-                        <div id="particles-js4" class="particles-js"></div>
+                    <div id="particles-js4" class="particles-js"></div>
                     <img class="card-img-top" src="images/shantanu-sharma-cv-1.jpg" alt="Shantanu Sharma CV"
                         title="Shananu Sharma CV">
                     <div class="card-body">
-                        
+
                         <h5 class="card-title">SHANTANU SHARMA (Software Engg)</h5>
                         <p class="card-text with-relative">
-                            <br/>
-                            Email - <b>shantanu34@outlook.com</b><br/>
+                            <br />
+                            Email - <b>shantanu34@outlook.com</b><br />
                             mobile - <b>+917503633251</b>
                         </p>
 
@@ -233,8 +240,9 @@
                             </div>
                         </li>
                         <li class="list-group-item text-center">
-                            <a class="btn btn-primary btn-sm with-relative" data-toggle="collapse" href="#collapseExample"
-                                role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <a class="btn btn-primary btn-sm with-relative" data-toggle="collapse"
+                                href="#collapseExample" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
                                 Many More...
                             </a>
                             <div class="collapse" id="collapseExample">
@@ -260,9 +268,9 @@
 
                 <div class=""></div>
                 <div class="card">
-                        <div id="particles-js0" class="particles-js"></div>
+                    <div id="particles-js0" class="particles-js"></div>
                     <div class="card-body">
-                           
+
                         <h5 class="card-title text-success">About Me</h5>
                         <p class="card-text">
 
@@ -271,19 +279,19 @@
                             Enterprise Web Applications, Game Development, Web-Responsive Designing, Creative Graphics,
                             Core Programming And Advance (OOPS-MVC) Programming Using PYTHON, Spark* (Big-Data)
                             AngularJS, JQuery,TypeScript, JavaScript, MongoDB, NodeJS, PHP, HTML, SASS, LESS, AWS Server
-                            And MVC Approach etc.<br/>
+                            And MVC Approach etc.<br />
                             To Secure A Job In The IT Industry Where I Can Utilize My Knowledge For The Organization’s
                             Growth.
                         </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="link with-relative">Go somewhere</a>
                     </div>
                 </div>
 
 
                 <div class="card cardSpacing">
-                        <div id="particles-js1" class="particles-js"></div>
+                    <div id="particles-js1" class="particles-js"></div>
                     <div class="card-body">
-                        <h5 class="card-title  text-success">Employment Experience</h5>
+                        <h5 class="card-title  text-danger">EMPLOYMENT EXPERIENCE</h5>
 
                         <div class="list-group">
                             <a class="list-group-item list-group-item-action flex-column align-items-start">
@@ -321,9 +329,9 @@
 
 
                 <div class="card cardSpacing">
-                        <div id="particles-js2" class="particles-js"></div>
+                    <div id="particles-js2" class="particles-js"></div>
                     <div class="card-body">
-                        <h5 class="card-title  text-success">Responsibilities</h5>
+                        <h5 class="card-title text-danger">RESPONSIBILITIES</h5>
 
                     </div>
                     <ul class="list-group list-group-flush">
@@ -338,17 +346,34 @@
                 </div>
 
                 <div class="card cardSpacing">
-                        <div id="particles-js3" class="particles-js"></div>
+                        <div id="particles-js5" class="particles-js"></div>
+                        <div class="card-body">
+                            <h5 class="card-title  text-danger">INTERNATIONAL CERTIFICATIONS</h5>
+    
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start with-relative">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1 text-primary"><i class="fa fa-shield" aria-hidden="true"></i>                                             Microsoft Certified Technology Specialist </h5>
+                                        <small><b>Cert Num : </b>E270-7725</small>
+                                    </div>
+                                    <p class="mb-1  text-info">Microsoft® Certified Technology Specialist: SQL Server 2008, Database Development.</p>
+                                    <small class=""></small>
+                                </a>
+    
+                            </div>
+    
+                        </div>
+                    </div>
+
+                <div class="card cardSpacing">
+                    <div id="particles-js3" class="particles-js"></div>
                     <div class="card-body">
-                        <h5 class="card-title  text-success">Projcts</h5>
-
-
-
-                        <div class="card-group">
+                        <h5 class="card-title text-danger">PROJECTS</h5>
+                        <div class="card-group ">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">shira 24</h5>
-                                    <p class="card-text">Online Live Audio/Radio Streaming
+                                    <p class="card-text"><span class="text-success">Live Audio/Radio Streaming</span> 
                                         <br /><small>Using Python3.6, JS, Jquery, Mysql, PHP etc.</small></p>
                                 </div>
                             </div>
@@ -356,7 +381,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Perf Engage</h5>
-                                    <p class="card-text">Enhence Own bussinuss
+                                    <p class="card-text"><span class="text-success">Enhence Own bussinuss</span> 
                                         <br /><small>Using Cordova/Hybrid App, ANGULAR-6, JS, Jquery, Mysql, PHP
                                             etc.</small></p>
                                 </div>
@@ -366,72 +391,70 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Triplets </h5>
-                                    <p class="card-text">Sell/Purchase/Rent Property
+                                    <p class="card-text"><span class="text-success">Sell/Purchase/Rent Property</span> 
                                         <br /><small>Using ANGULAR-6, JS, Jquery, Mysql, PHP etc.</small></p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="card-group">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">PowerChallenge</h5>
-                                        <p class="card-text">Game Development
-                                            <br /><small>Quiz based game. Using AngularJS, JS, Jquery, Mysql, PHP etc.</small></p>
-                                    </div>
-                                </div>
-    
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">EBIKEFIND </h5>
-                                        <p class="card-text">Enhence Own bussinuss
-                                            <br /><small>Commerce eBike sale/purchase based website. some feature have user, users-plus professional users/sellers etc on advance jQuery and PHP.  </small></p>
-                                    </div>
-                                </div>
-    
-    
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Instalets </h5>
-                                        <p class="card-text">Sell/Purchase/Rent Property
-                                            <br /><small>U,K(United Kingdom) Property price calculate based website based on Jquery And PHP</small></p>
-                                    </div>
+                        <div class="card-group ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">PowerChallenge</h5>
+                                    <p class="card-text"><span class="text-success">Game Development</span> 
+                                        <br /><small>Quiz based game. Using AngularJS, JS, Jquery, Mysql, PHP
+                                            etc.</small></p>
                                 </div>
                             </div>
 
-                            <div class="card-group">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h5 class="card-title">BookMyNai </h5>
-                                            <p class="card-text">
-                                                <br /><small>Client Product making by Emobi Technologies Pvt. Ltd. This project based on buy And Selling Books, managing articles and Managing News etc.  Managing Rest-API’s, EBS Payment Gateways and business logics .</small></p>
-                                        </div>
-                                    </div>
-        
-                                   
-        
-        
-                                    
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">EBIKEFIND </h5>
+                                    <p class="card-text"><span class="text-success">Enhence Own bussinuss</span> 
+                                        <br /><small>Commerce eBike sale/purchase based website. some feature have user,
+                                            users-plus professional users/sellers etc on advance jQuery and PHP.
+                                        </small></p>
                                 </div>
-    
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Instalets </h5>
+                                    <p class="card-text"><span class="text-success">Sell/Purchase/Rent Property</span> 
+                                        <br /><small>U,K(United Kingdom) Property price calculate based website based on
+                                            Jquery And PHP</small></p>
+                                </div>
+                            </div>
                         </div>
 
+                        <div class="card-group">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">BookMyNai </h5>
+                                    <p class="card-text"><span class="text-success">Salon Service Booking</span> 
+                                        <br /><small>Client Product making by Emobi Technologies Pvt. Ltd. This project
+                                            based on buy And Selling Books, managing articles and Managing News etc.
+                                            Managing Rest-API’s, EBS Payment Gateways and business logics .</small></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    
                 </div>
 
-
+                
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <br />
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox"></div>
+    </div>
 
-            </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <br />
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox"></div>
+
         </div>
+    </div>
     </div>
 
     <!-- End Page Container -->
@@ -443,127 +466,127 @@
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9"></script>
     <script>
-        var colorStars=[
-            {color:"#ffe100",stroke:"#7b78b3"},
-            {color:"#7f5900",stroke:"#7b78b3"},
-            {color:"#9a4fdc",stroke:"#7b78b3"},
-            {color:"#e8a62e",stroke:"#ff0000"},
-            {color:"#2fe85b",stroke:"#9a4fdc"},
-            {color:"#007f61",stroke:"#ed48c6"},
-           
+        var colorStars = [
+            { color: "#ffe100", stroke: "#fc0000" },
+            { color: "#cdcc56", stroke: "#00edfc" },
+            { color: "#9a4fdc", stroke: "#fca300" },
+            { color: "#e8a62e", stroke: "#00edfc" },
+            { color: "#2fe85b", stroke: "#9a4fdc" },
+            { color: "#ffe100", stroke: "#fc0000" },
+
         ];
-        for (let index = 0; index < 5; index++)
-        particlesJS("particles-js"+index, 
-        {
-  "particles": {
-    "number": {
-      "value": 160,
-      "density": {
-        "enable": true,
-        "value_area": 200
-      }
-    },
-    "color": {
-      "value": colorStars[index].color
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": colorStars[index].stroke
-      },
-      "polygon": {
-        "nb_sides": 4
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 1,
-      "random": true,
-      "anim": {
-        "enable": true,
-        "speed": 1,
-        "opacity_min": 0,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 4,
-        "size_min": 0.3,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": false,
-      "distance": 150,
-      "color":  colorStars[index].stroke,
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 5,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 600
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "remove"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 100,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 250,
-        "size": 0,
-        "duration": 2,
-        "opacity": 0,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 400,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
+        for (let index = 0; index <= 5; index++)
+            particlesJS("particles-js" + index,
+                {
+                    "particles": {
+                        "number": {
+                            "value": 30,
+                            "density": {
+                                "enable": true,
+                                "value_area": 200
+                            }
+                        },
+                        "color": {
+                            "value": colorStars[index].color
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": colorStars[index].stroke
+                            },
+                            "polygon": {
+                                "nb_sides": 4
+                            },
+                            "image": {
+                                "src": "img/github.svg",
+                                "width": 100,
+                                "height": 100
+                            }
+                        },
+                        "opacity": {
+                            "value": 1,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 1,
+                                "opacity_min": 0,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 4,
+                                "size_min": 0.3,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": false,
+                            "distance": 150,
+                            "color": colorStars[index].stroke,
+                            "opacity": 0.4,
+                            "width": 3
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 5,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 600
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "remove"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 100,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 250,
+                                "size": 0,
+                                "duration": 2,
+                                "opacity": 0,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 400,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
     </script>
 </body>
 

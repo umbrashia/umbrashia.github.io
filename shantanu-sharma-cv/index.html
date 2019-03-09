@@ -30,6 +30,7 @@
         addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' }, sync);
         addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' }, sync);
         addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
+        addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
         function addTag(name, attributes, sync) {
             var el = document.createElement(name),
                 attrName;
@@ -388,7 +389,8 @@
                             ABOUT ME</h5>
                         <p class="card-text">
 
-                            I Having More Than 4 Year 1 Months Of Experience On Enterprises Web Application Development
+                            I Having More Than <span class="umbrashiaTimer" data-from="2015-01-06" data-to=""></span> Of
+                            Experience On Enterprises Web Application Development
                             in SourceSoft Solutions Pvt. Ltd. IT Service & Product Based Company.
                             Enterprise Web Applications, Game Development, Web-Responsive Designing, Creative Graphics,
                             Core Programming And Advance (OOPS-MVC) Programming Using PYTHON, Spark* (Big-Data)
@@ -398,7 +400,7 @@
                             Growth.
                         </p>
                         <a href="https://1drv.ms/b/s!Anm9ZyqXv3wLgZNOm-bXOHCAKh8UQQ" target="_blank"
-                            class="link with-relative">Go to hard copy...</a>
+                            class="link with-relative" onclick="">Go to hard copy...</a>
                     </div>
                 </div>
 
@@ -437,7 +439,7 @@
                             <a class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
                                     <h5 class="mb-1">SourceSoft Solutions Pvt. Ltd.</h5>
-                                    <small>2 years, 8 months</small>
+                                    <small><span class="umbrashiaTimer" data-from="2016-07-14"></span></small>
                                 </div>
                                 <p class="mb-1">Currently Working As Sr. Software Engineer </p>
                                 <small>Experience with Live Streaming, Game Devlopment, AWS, Python3.6,
@@ -615,7 +617,7 @@
                 <br />
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
                 <div class="addthis_inline_share_toolbox"></div>
-                <br/>
+                <br />
             </div>
         </div>
 
@@ -631,8 +633,20 @@
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9"></script>
-    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <script>
+        $(document).ready(function () {
+            $(document).find(".umbrashiaTimer").each(function () {
+                var a, b = moment();
+                var a = moment($(this).attr("data-from").split("-"));
+                if (!$.isEmptyObject($(this).attr("data-to")))
+                    b = moment($(this).attr("data-to").split("-"));
+                var diffDuration = moment.duration(a.diff(b));
+                var temp=diffDuration.years() + " Years " + diffDuration.months() + " Months";
+                temp=temp.replace("-","");
+                temp=temp.replace("-","");
+                $(this).text(temp);
+            });
+        })
         var colorStars = [
             { color: "#00b3ff", stroke: "#fc0000" },
             { color: "#cdcc56", stroke: "#00edfc" },

@@ -1,126 +1,138 @@
 <!DOCTYPE html>
 <html>
-<title>Shantanu Sharma CV</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description"
-    content="As Software Engineer To secure a job in the IT Industry where I can utilize my knowledge for the organization’s growth.">
-<meta name="keywords"
-    content="shantanu sharma umbrashia, shantanu sharma software engg,shantanu sharma sourcesoft solutions,shantanu sharma nxtlife technologies,">
-<meta name="author" content="Shantanu Sharma">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script>
-    // dynamically add base tag as well as css and javascript files.
-    // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
-    // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
-    (function () {
-        var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
-            rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
-            baseUrl = "https://umbrashia.github.io/"//location.href.replace(rUrl, indexFile),
-        production = "https://umbrashia.github.io/shantanu-sharma-cv/",
-            headEl = document.getElementsByTagName('head')[0],
-            sync = true;
 
-        //addTag('base', {href: baseUrl});
-        addTag('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' }, sync);
-        addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' }, sync);
-        addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' }, sync);
-        addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
-        addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
-        function addTag(name, attributes, sync) {
-            var el = document.createElement(name),
-                attrName;
+<head>
+    <title>Shantanu Sharma CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="As Software Engineer To secure a job in the IT Industry where I can utilize my knowledge for the organization’s growth.">
+    <meta name="keywords"
+        content="shantanu sharma umbrashia, shantanu sharma software engg,shantanu sharma sourcesoft solutions,shantanu sharma nxtlife technologies,">
+    <meta name="author" content="Shantanu Sharma">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        // dynamically add base tag as well as css and javascript files.
+        // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
+        // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
+        (function () {
+            var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+                rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
+                baseUrl = "https://umbrashia.github.io/"//location.href.replace(rUrl, indexFile),
+            production = "https://umbrashia.github.io/shantanu-sharma-cv/",
+                headEl = document.getElementsByTagName('head')[0],
+                sync = true;
 
-            for (attrName in attributes) {
-                el.setAttribute(attrName, attributes[attrName]);
+            //addTag('base', {href: baseUrl});
+            addTag('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' }, sync);
+            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' }, sync);
+            addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' }, sync);
+            addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
+            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
+            function addTag(name, attributes, sync) {
+                var el = document.createElement(name),
+                    attrName;
+
+                for (attrName in attributes) {
+                    el.setAttribute(attrName, attributes[attrName]);
+                }
+
+                sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
             }
 
-            sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+            function outerHTML(node) {
+                // if IE, Chrome take the internal method otherwise build one
+                return node.outerHTML || (
+                    function (n) {
+                        var div = document.createElement('div'), h;
+                        div.appendChild(n);
+                        h = div.innerHTML;
+                        div = null;
+                        return h;
+                    })(node);
+            }
+        })();
+    </script>
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        li,
+        a {
+            font-family: "Roboto", sans-serif
         }
 
-        function outerHTML(node) {
-            // if IE, Chrome take the internal method otherwise build one
-            return node.outerHTML || (
-                function (n) {
-                    var div = document.createElement('div'), h;
-                    div.appendChild(n);
-                    h = div.innerHTML;
-                    div = null;
-                    return h;
-                })(node);
+        body {
+            background-color: #f2f2f2;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
         }
-    })();
-</script>
-<style>
-    html,
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    li,
-    a {
-        font-family: "Roboto", sans-serif
-    }
 
-    body {
-        background-color: #f2f2f2;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        
-    }
+        /* ---- reset ---- */
 
-    /* ---- reset ---- */
-
-    canvas {
-        display: block;
-        vertical-align: bottom;
-    }
+        canvas {
+            display: block;
+            vertical-align: bottom;
+        }
 
 
-    /* ---- particles.js container ---- */
+        /* ---- particles.js container ---- */
 
-    .particles-js {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        .particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
 
-        /* background-color: #fff; */
-    }
+            /* background-color: #fff; */
+        }
 
-    .list-group-item {
-        position: inherit;
-    }
+        .list-group-item {
+            position: inherit;
+        }
 
-    .with-relative {
-        position: relative;
-    }
+        .with-relative {
+            position: relative;
+        }
 
-    .card {
-        position: inherit !important;
-        background-color: #ffffffd9 !important;
-    }
+        .card {
+            position: inherit !important;
+            background-color: #ffffffd9 !important;
+        }
 
-    .list-group-item {
-        background-color: #ffffff55;
-    }
+        .list-group-item {
+            background-color: #ffffff55;
+        }
 
-    .card-group .card {
-        background-color: #ffffff4f !important;
-    }
+        .card-group .card {
+            background-color: #ffffff4f !important;
+        }
 
-    .carousel-item img {
-        object-fit: cover;
-        height: 200px;
-    }
-</style>
+        .carousel-item img {
+            object-fit: cover;
+            height: 200px;
+        }
+    </style>
+    <script type='application/ld+json'>
+        {"@context":"https://schema.org",
+        "@type":"Organization",
+        "url":"https://umbrashia.github.io/shantanu-sharma-cv/",
+        "sameAs":["https://www.facebook.com/ShantanuSharma007"],
+        "@id":"https://umbrashia.github.io/shantanu-sharma-cv/",
+        "name":"Shantanu Sharma CV",
+        "logo":"https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg"}</script>
+</head>
 
 <body class="w3-light-grey">
     <br />
@@ -136,20 +148,22 @@
                         title="Shananu Sharma CV">
                     <div class="card-body">
 
-                        <h5 class="card-title text-primary"><b>SHANTANU SHARMA</b> <br><small>(Software Engineer)</small></h5>
+                        <h5 class="card-title text-primary"><b>SHANTANU SHARMA</b> <br><small>(Software
+                                Engineer)</small></h5>
                         <p class="card-text ">
-                            
+
                             <table class="w-100">
                                 <tr>
                                     <td class="text-primary">Email </td>
                                     <td>-&nbsp;&nbsp;</td>
                                     <td><a class="with-relative text-success"
-                                            href="mailto:shantanu34@outlook.com"><b>shantanu34@outlook.com</b></a>  </td>
+                                            href="mailto:shantanu34@outlook.com"><b>shantanu34@outlook.com</b></a> </td>
                                 </tr>
                                 <tr>
-                                    <td  class="text-primary">Mobile </td>
+                                    <td class="text-primary">Mobile </td>
                                     <td>-&nbsp;&nbsp;</td>
-                                    <td><a class="with-relative text-success" href="tel:917503633251"><b>+91-7503633251</b></a></td>
+                                    <td><a class="with-relative text-success"
+                                            href="tel:917503633251"><b>+91-7503633251</b></a></td>
                                 </tr>
                             </table>
 
@@ -201,8 +215,9 @@
                         <li class="list-group-item">
                             AngularJS Universal
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped  progress-bar-animated-REMOVE" role="progressbar"
-                                    style="width: 70%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">70%
+                                <div class="progress-bar progress-bar-striped  progress-bar-animated-REMOVE"
+                                    role="progressbar" style="width: 70%" aria-valuenow="10" aria-valuemin="0"
+                                    aria-valuemax="100">70%
                                 </div>
                             </div>
                         </li>
@@ -234,8 +249,9 @@
                         <li class="list-group-item">
                             Java & LESS
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped  progress-bar-animated-REMOVE" role="progressbar"
-                                    style="width: 80%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">80%
+                                <div class="progress-bar progress-bar-striped  progress-bar-animated-REMOVE"
+                                    role="progressbar" style="width: 80%" aria-valuenow="10" aria-valuemin="0"
+                                    aria-valuemax="100">80%
                                 </div>
                             </div>
                         </li>
@@ -653,10 +669,10 @@
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9"></script>
     <script>
         $(window).on('load', function () {
-            $("body").css("background-image", "url('https://picsum.photos/"+$(this).height()+"/"+$(this).width()+"/?random')");
+            $("body").css("background-image", "url('https://picsum.photos/" + $(this).height() + "/" + $(this).width() + "/?random')");
         });
         $(document).ready(function () {
-            
+
 
             $(document).find(".umbrashiaTimer").each(function () {
                 var a, b = moment();

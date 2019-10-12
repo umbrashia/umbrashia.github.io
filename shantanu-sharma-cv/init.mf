@@ -8,7 +8,7 @@ images/shantanu-sharma-cv-5.jpg
 images/shantanu-sharma-cv.ico
 images/shantanu-sharma-cv.jpg
 css/style.css?ver=100
-css/bootstrap.min.css?ver=100
+https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 https://fonts.googleapis.com/css?family=Roboto
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
 https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9

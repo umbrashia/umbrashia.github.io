@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  manifest="init.mf">
+<html lang="en" manifest="init.mf">
 
 <head>
     <title>Shantanu Sharma CV</title>
@@ -16,6 +16,14 @@
     <meta name="revisit-after" content="daily">
     <meta name="google-site-verification" content="4cc4OIRHxn5ppIT5pSej6pSwCtnnA1Ix41-7aCFxiTI">
     <meta name="robots" content="index, follow" />
+    <script type='application/ld+json'>
+        {"@context":"https://schema.org",
+        "@type":"Organization",
+        "url":"https://umbrashia.github.io/shantanu-sharma-cv/",
+        "sameAs":["https://www.facebook.com/ShantanuSharma007"],
+        "@id":"https://umbrashia.github.io/shantanu-sharma-cv/",
+        "name":"Shantanu Sharma CV",
+        "logo":"https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg"}</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149839561-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -23,14 +31,7 @@
         gtag('js', new Date());
         gtag('config', 'UA-149839561-1');
     </script>
-    <script type='application/ld+json'>
-    {"@context":"https://schema.org",
-    "@type":"Organization",
-    "url":"https://umbrashia.github.io/shantanu-sharma-cv/",
-    "sameAs":["https://www.facebook.com/ShantanuSharma007"],
-    "@id":"https://umbrashia.github.io/shantanu-sharma-cv/",
-    "name":"Shantanu Sharma CV",
-    "logo":"https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg"}</script>
+
 
     <link rel="shortcut icon" href="images/shantanu-sharma-cv.ico" type="image/x-icon">
     <link rel="icon" href="images/shantanu-sharma-cv.ico" type="image/x-icon">
@@ -49,7 +50,7 @@
                 sync = true;
 
             //addTag('base', {href: baseUrl});
-            
+
             addTag('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto', type: 'text/css' });
             addTag('link', { rel: 'stylesheet', href: 'css/bootstrap.min.css', type: 'text/css' });
             addTag('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type: 'text/css' });
@@ -694,7 +695,7 @@
                 //$("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
             }, 0);
             //----------------------------------
-            
+
             //---------
             //------------------------------------
             $(document).find(".umbrashiaTimer").each(function () {
@@ -722,121 +723,122 @@
                 { color: "#00b3ff", stroke: "#fc0000" },
                 { color: "#9a4fdc", stroke: "#fca300" }
             ];
-            setTimeout(function () {
-                for (let index = 0; index < colorStars.length; index++)
+            if (0)
+                setTimeout(function () {
+                    for (let index = 0; index < colorStars.length; index++)
 
-                    particlesJS("particles-js" + index,
-                        {
-                            "particles": {
-                                "number": {
-                                    "value": 30,
-                                    "density": {
-                                        "enable": true,
-                                        "value_area": 200
-                                    }
-                                },
-                                "color": {
-                                    "value": colorStars[index].color
-                                },
-                                "shape": {
-                                    "type": "circle",
-                                    "stroke": {
-                                        "width": 0,
-                                        "color": colorStars[index].stroke
-                                    },
-                                    "polygon": {
-                                        "nb_sides": 4
-                                    },
-                                    "image": {
-                                        "src": "img/github.svg",
-                                        "width": 100,
-                                        "height": 100
-                                    }
-                                },
-                                "opacity": {
-                                    "value": 1,
-                                    "random": true,
-                                    "anim": {
-                                        "enable": true,
-                                        "speed": 1,
-                                        "opacity_min": 0,
-                                        "sync": false
-                                    }
-                                },
-                                "size": {
-                                    "value": 3,
-                                    "random": true,
-                                    "anim": {
-                                        "enable": false,
-                                        "speed": 4,
-                                        "size_min": 0.3,
-                                        "sync": false
-                                    }
-                                },
-                                "line_linked": {
-                                    "enable": false,
-                                    "distance": 150,
-                                    "color": colorStars[index].stroke,
-                                    "opacity": 0.4,
-                                    "width": 3
-                                },
-                                "move": {
-                                    "enable": true,
-                                    "speed": 5,
-                                    "direction": "none",
-                                    "random": true,
-                                    "straight": false,
-                                    "out_mode": "out",
-                                    "bounce": false,
-                                    "attract": {
-                                        "enable": false,
-                                        "rotateX": 600,
-                                        "rotateY": 600
-                                    }
-                                }
-                            },
-                            "interactivity": {
-                                "detect_on": "canvas",
-                                "events": {
-                                    "onhover": {
-                                        "enable": true,
-                                        "mode": "grab"
-                                    },
-                                    "onclick": {
-                                        "enable": true,
-                                        "mode": "remove"
-                                    },
-                                    "resize": true
-                                },
-                                "modes": {
-                                    "grab": {
-                                        "distance": 100,
-                                        "line_linked": {
-                                            "opacity": 1
+                        particlesJS("particles-js" + index,
+                            {
+                                "particles": {
+                                    "number": {
+                                        "value": 30,
+                                        "density": {
+                                            "enable": true,
+                                            "value_area": 200
                                         }
                                     },
-                                    "bubble": {
-                                        "distance": 250,
-                                        "size": 0,
-                                        "duration": 2,
-                                        "opacity": 0,
-                                        "speed": 3
+                                    "color": {
+                                        "value": colorStars[index].color
                                     },
-                                    "repulse": {
-                                        "distance": 400,
-                                        "duration": 0.4
+                                    "shape": {
+                                        "type": "circle",
+                                        "stroke": {
+                                            "width": 0,
+                                            "color": colorStars[index].stroke
+                                        },
+                                        "polygon": {
+                                            "nb_sides": 4
+                                        },
+                                        "image": {
+                                            "src": "img/github.svg",
+                                            "width": 100,
+                                            "height": 100
+                                        }
                                     },
-                                    "push": {
-                                        "particles_nb": 4
+                                    "opacity": {
+                                        "value": 1,
+                                        "random": true,
+                                        "anim": {
+                                            "enable": true,
+                                            "speed": 1,
+                                            "opacity_min": 0,
+                                            "sync": false
+                                        }
                                     },
-                                    "remove": {
-                                        "particles_nb": 2
+                                    "size": {
+                                        "value": 3,
+                                        "random": true,
+                                        "anim": {
+                                            "enable": false,
+                                            "speed": 4,
+                                            "size_min": 0.3,
+                                            "sync": false
+                                        }
+                                    },
+                                    "line_linked": {
+                                        "enable": false,
+                                        "distance": 150,
+                                        "color": colorStars[index].stroke,
+                                        "opacity": 0.4,
+                                        "width": 3
+                                    },
+                                    "move": {
+                                        "enable": true,
+                                        "speed": 5,
+                                        "direction": "none",
+                                        "random": true,
+                                        "straight": false,
+                                        "out_mode": "out",
+                                        "bounce": false,
+                                        "attract": {
+                                            "enable": false,
+                                            "rotateX": 600,
+                                            "rotateY": 600
+                                        }
                                     }
-                                }
-                            },
-                            "retina_detect": true
-                        });
-            }, 0);
+                                },
+                                "interactivity": {
+                                    "detect_on": "canvas",
+                                    "events": {
+                                        "onhover": {
+                                            "enable": true,
+                                            "mode": "grab"
+                                        },
+                                        "onclick": {
+                                            "enable": true,
+                                            "mode": "remove"
+                                        },
+                                        "resize": true
+                                    },
+                                    "modes": {
+                                        "grab": {
+                                            "distance": 100,
+                                            "line_linked": {
+                                                "opacity": 1
+                                            }
+                                        },
+                                        "bubble": {
+                                            "distance": 250,
+                                            "size": 0,
+                                            "duration": 2,
+                                            "opacity": 0,
+                                            "speed": 3
+                                        },
+                                        "repulse": {
+                                            "distance": 400,
+                                            "duration": 0.4
+                                        },
+                                        "push": {
+                                            "particles_nb": 4
+                                        },
+                                        "remove": {
+                                            "particles_nb": 2
+                                        }
+                                    }
+                                },
+                                "retina_detect": true
+                            });
+                }, 0);
 
 
         })

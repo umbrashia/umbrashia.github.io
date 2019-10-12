@@ -19,13 +19,13 @@ https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
 https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
 https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js
 https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js
-https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0
 https://v1.addthisedge.com/live/boost/ra-5c520471dd73a1b9/_ate.track.config_resp 
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0 
 
 
 NETWORK:
 index.html
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0
 *
 
 

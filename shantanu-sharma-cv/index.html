@@ -691,23 +691,9 @@
     <script>
         $(window).on('load', function () {
             $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
-        });
-        $(document).ready(function () {
 
-
-            $(document).find(".umbrashiaTimer").each(function () {
-                var a, b = moment();
-                var a = moment($(this).attr("data-from").split("-"));
-                if (!$.isEmptyObject($(this).attr("data-to")))
-                    b = moment($(this).attr("data-to").split("-"));
-                var diffDuration = moment.duration(a.diff(b));
-                var temp = diffDuration.years() + " Years " + diffDuration.months() + " Months";
-                temp = temp.replace("-", "");
-                temp = temp.replace("-", "");
-                $(this).text(temp);
-            });
-        })
-        var colorStars = [
+            //----------------------------------
+            var colorStars = [
             { color: "#00b3ff", stroke: "#fc0000" },
             { color: "#cdcc56", stroke: "#00edfc" },
             { color: "#9a4fdc", stroke: "#fca300" },
@@ -831,6 +817,25 @@
                     },
                     "retina_detect": true
                 });
+            //------------------------------------
+            $(document).find(".umbrashiaTimer").each(function () {
+                var a, b = moment();
+                var a = moment($(this).attr("data-from").split("-"));
+                if (!$.isEmptyObject($(this).attr("data-to")))
+                    b = moment($(this).attr("data-to").split("-"));
+                var diffDuration = moment.duration(a.diff(b));
+                var temp = diffDuration.years() + " Years " + diffDuration.months() + " Months";
+                temp = temp.replace("-", "");
+                temp = temp.replace("-", "");
+                $(this).text(temp);
+            });
+        });
+        $(document).ready(function () {
+
+
+           
+        })
+       
     </script>
 </body>
 

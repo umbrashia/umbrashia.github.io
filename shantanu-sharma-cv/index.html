@@ -691,9 +691,25 @@
     <script>
         $(window).on('load', function () {
             setTimeout(function () {
-                $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
-            }, 500);
+                //$("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
+            }, 0);
             //----------------------------------
+            
+            //---------
+            //------------------------------------
+            $(document).find(".umbrashiaTimer").each(function () {
+                var a, b = moment();
+                var a = moment($(this).attr("data-from").split("-"));
+                if (!$.isEmptyObject($(this).attr("data-to")))
+                    b = moment($(this).attr("data-to").split("-"));
+                var diffDuration = moment.duration(a.diff(b));
+                var temp = diffDuration.years() + " Years " + diffDuration.months() + " Months";
+                temp = temp.replace("-", "");
+                temp = temp.replace("-", "");
+                $(this).text(temp);
+            });
+        });
+        $(document).ready(function () {
             var colorStars = [
                 { color: "#00b3ff", stroke: "#fc0000" },
                 { color: "#cdcc56", stroke: "#00edfc" },
@@ -820,23 +836,7 @@
                             },
                             "retina_detect": true
                         });
-            }, 1);
-            //---------
-            //------------------------------------
-            $(document).find(".umbrashiaTimer").each(function () {
-                var a, b = moment();
-                var a = moment($(this).attr("data-from").split("-"));
-                if (!$.isEmptyObject($(this).attr("data-to")))
-                    b = moment($(this).attr("data-to").split("-"));
-                var diffDuration = moment.duration(a.diff(b));
-                var temp = diffDuration.years() + " Years " + diffDuration.months() + " Months";
-                temp = temp.replace("-", "");
-                temp = temp.replace("-", "");
-                $(this).text(temp);
-            });
-        });
-        $(document).ready(function () {
-
+            }, 0);
 
 
         })

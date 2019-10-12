@@ -1,0 +1,11 @@
+CACHE MANIFEST
+CACHE:
+images/shantanu-sharma-cv-1.jpg
+images/shantanu-sharma-cv-2.jpg
+images/shantanu-sharma-cv-3.jpg
+images/shantanu-sharma-cv-4.jpg
+images/shantanu-sharma-cv-5.jpg
+images/shantanu-sharma-cv.ico
+images/shantanu-sharma-cv.jpg
+css/style.css?ver=100
+css/bootstrap.min.css?ver=100

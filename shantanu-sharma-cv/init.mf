@@ -9,9 +9,6 @@ images/shantanu-sharma-cv.ico
 images/shantanu-sharma-cv.jpg
 css/style.css?ver=100
 css/bootstrap.min.css?ver=100
-
-
-NETWORK:
 https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9
 https://fonts.googleapis.com/css?family=Roboto
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
@@ -20,6 +17,10 @@ https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
 https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
 https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js
 https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js
+
+
+NETWORK:
+*
 
 
 

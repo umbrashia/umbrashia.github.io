@@ -9,3 +9,7 @@ images/shantanu-sharma-cv.ico
 images/shantanu-sharma-cv.jpg
 css/style.css?ver=100
 css/bootstrap.min.css?ver=100
+
+
+NETWORK:
+*

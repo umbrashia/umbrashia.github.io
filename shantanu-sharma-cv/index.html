@@ -18,7 +18,7 @@
     <meta name="robots" content="index, follow" />
     <script type='application/ld+json'>
         {"@context":"https://schema.org",
-        "@type":"Organization",
+        "@type":"Person",
         "url":"https://umbrashia.github.io/shantanu-sharma-cv/",
         "sameAs":["https://www.facebook.com/ShantanuSharma007"],
         "@id":"https://umbrashia.github.io/shantanu-sharma-cv/",
@@ -54,6 +54,7 @@
             addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' }, sync);
             addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
             addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
+            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js' }, sync);
             function addTag(name, attributes, sync) {
                 var el = document.createElement(name),
                     attrName;
@@ -78,7 +79,14 @@
             }
         })();
     </script>
-
+    <script type='application/ld+json'>
+    {"@context":"https://schema.org",
+    "@type":"Person",
+    "url":"https://umbrashia.github.io/shantanu-sharma-cv/",
+    "sameAs":["https://www.facebook.com/ShantanuSharma007"],
+    "@id":"https://umbrashia.github.io/shantanu-sharma-cv/",
+    "name":"Shantanu Sharma CV",
+    "logo":"https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg"}</script>
 
 </head>
 
@@ -162,7 +170,7 @@
                         title="Shananu Sharma CV">
                     <div class="card-body">
 
-                        <h5 class="card-title text-primary"><b>SHANTANU SHARMA</b> <br><small>(Software
+                        <h5 class="card-title text-primary" role="h1" aria-label="SHANTANU SHARMA"><b>SHANTANU SHARMA</b> <br><small>(Software
                                 Engineer)</small></h5>
                         <p class="card-text ">
 
@@ -171,7 +179,7 @@
                                     <td class="text-primary">Email </td>
                                     <td>-&nbsp;&nbsp;</td>
                                     <td><a class="with-relative text-success"
-                                            href="mailto:shantanu34@outlook.com"><b>shantanu34@outlook.com</b></a> </td>
+                                            href="mailto:shantanu34@outlook.com" ><b><span role="h2" aria-label="email">shantanu34@outlook.com</span> </b></a> </td>
                                 </tr>
                                 <tr>
                                     <td class="text-primary">Mobile </td>
@@ -724,7 +732,7 @@
                 { color: "#00b3ff", stroke: "#fc0000" },
                 { color: "#9a4fdc", stroke: "#fca300" }
             ];
-            if (window.mobilecheck()===false)
+            if (window.mobilecheck() === false)
                 setTimeout(function () {
                     for (let index = 0; index < colorStars.length; index++)
 

@@ -16,7 +16,8 @@
     <meta name="revisit-after" content="daily">
     <meta name="google-site-verification" content="4cc4OIRHxn5ppIT5pSej6pSwCtnnA1Ix41-7aCFxiTI">
     <meta name="robots" content="index, follow" />
-    <meta property="og:image" content="https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg"/>
+    <meta property="og:image"
+        content="https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg" />
 
     <link rel="shortcut icon" href="images/shantanu-sharma-cv.ico" type="image/x-icon">
     <link rel="icon" href="images/shantanu-sharma-cv.ico" type="image/x-icon">
@@ -85,7 +86,7 @@
 </head>
 
 <body class="w3-light-grey">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css"> -->
     <style>
         html,
@@ -782,11 +783,8 @@
             ];
             if (window.mobilecheck() === false) {
 
-
-
-                setTimeout(function () {
-                    for (let index = 0; index < colorStars.length; index++)
-
+                for (let ix = 0; ix < colorStars.length; ix++)
+                    setTimeout(function (index) {
                         particlesJS("particles-js" + index,
                             {
                                 "particles": {
@@ -898,7 +896,7 @@
                                 },
                                 "retina_detect": true
                             });
-                }, 1000);
+                    }, 1, ix);
 
             }
         })

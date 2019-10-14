@@ -742,7 +742,8 @@
         $(window).on('load', function () {
             if (window.mobilecheck() === false) {
                 setTimeout(function () {
-                    $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
+                    // $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
+                    $("body").css("background-image", "url('images/background.jpeg')");
                 }, 0);
             }
             //----------------------------------

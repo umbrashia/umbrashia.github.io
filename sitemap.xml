@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://umbrashia.github.io/shantanu-sharma-cv/</loc>
+    <lastmod>2019-10-15</lastmod>
+    <changefreq>daily</changefreq>
+
+    <image:image>
+      <image:loc>https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg</image:loc>
+      <image:title>shantanu sharma cv</image:title>
+      <image:caption>main image</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-2.jpg</image:loc>
+      <image:title>shantanu sharma cv</image:title>
+      <image:caption>random gallery</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-3.jpg</image:loc>
+      <image:title>shantanu sharma cv</image:title>
+      <image:caption>random gallery</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-4.jpg</image:loc>
+      <image:title>shantanu sharma cv</image:title>
+      <image:caption>random gallery</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-qr-code.png</image:loc>
+      <image:title>shantanu sharma cv qr code</image:title>
+      <image:caption>random gallery</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://umbrashia.github.io/shantanu-sharma-cv/images/background.jpg</image:loc>
+      <image:title>shantanu sharma cv background</image:title>
+      <image:caption>random gallery</image:caption>
+    </image:image>
+
+
+  </url>
+</urlset>

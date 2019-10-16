@@ -1,0 +1,6 @@
+User-Agent: *
+
+User-Agent: Googlebot-Image
+Allow: /images
+
+Sitemap: https://umbrashia.github.io/shantanu-sharma-cv/sitemap.xml

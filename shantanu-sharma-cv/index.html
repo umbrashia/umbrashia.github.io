@@ -57,7 +57,6 @@
 
             //addTag('base', {href: baseUrl});
 
-            addTag('link', { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', type: 'text/css' });
             addTag('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto', type: 'text/css' });
             addTag('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type: 'text/css' });
             addTag('link', { rel: 'stylesheet', href: 'css/style.css', type: 'text/css' });
@@ -794,16 +793,20 @@
             }
         });
         $(window).on('load', function () {
-            if (window.mobilecheck() === false) {
-                setTimeout(function () {
-                    addTag('script', { src: 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9' ,async:true }, false);
+            setTimeout(function () {
+                addTag('link', { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', type: 'text/css' });
+                addTag('script', { src: 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9' ,async:true }, false);
+                if (window.mobilecheck() === false) {
 
-//                     $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
-//                     $("body").css("background-image", "url('images/background.jpg')");
-                    $("body").css("background-image", "url('images/background-min.jpg')");
 
-                }, 0);
-            }
+
+    //                     $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
+    //                     $("body").css("background-image", "url('images/background.jpg')");
+                        $("body").css("background-image", "url('images/background-min.jpg')");
+
+
+                }
+             }, 0);
             //----------------------------------
 
             //---------

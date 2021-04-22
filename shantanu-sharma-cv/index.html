@@ -23,30 +23,15 @@
         // dynamically add base tag as well as css and javascript files.
         // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
         // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
-        (function () {
+//         (function () {
             var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
                 rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
                 baseUrl = "https://umbrashia.github.io/"//location.href.replace(rUrl, indexFile),
             production = "https://umbrashia.github.io/shantanu-sharma-cv/",
                 headEl = document.getElementsByTagName('head')[0],
                 sync = true;
-
-            //addTag('base', {href: baseUrl});
-
-            addTag('link', { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', type: 'text/css' });
-            addTag('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto', type: 'text/css' });
-            addTag('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type: 'text/css' });
-            addTag('link', { rel: 'stylesheet', href: 'css/style.css', type: 'text/css' });
-            // addTag('link', { rel: 'stylesheet', href: '', type: 'text/css' });
-
-
-            addTag('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' }, sync);
-            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' }, sync);
-            addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' }, sync);
-            addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
-            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
-            // addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js' }, sync);
-            addTag('script', { src: 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9' }, false);
+        
+        
             function addTag(name, attributes, sync) {
                 var el = document.createElement(name),
                     attrName;
@@ -69,7 +54,24 @@
                         return h;
                     })(node);
             }
-        })();
+
+            //addTag('base', {href: baseUrl});
+
+            addTag('link', { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', type: 'text/css' });
+            addTag('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto', type: 'text/css' });
+            addTag('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type: 'text/css' });
+            addTag('link', { rel: 'stylesheet', href: 'css/style.css', type: 'text/css' });
+            // addTag('link', { rel: 'stylesheet', href: '', type: 'text/css' });
+
+
+            addTag('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' }, sync);
+            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' }, sync);
+            addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' }, sync);
+            addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
+            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
+            // addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js' }, sync);
+            
+//         })();
     </script>
     <!-- Google Tag Manager -->
 
@@ -794,6 +796,8 @@
         $(window).on('load', function () {
             if (window.mobilecheck() === false) {
                 setTimeout(function () {
+                    addTag('script', { src: 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9' ,async:true }, false);
+
 //                     $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
 //                     $("body").css("background-image", "url('images/background.jpg')");
                     $("body").css("background-image", "url('images/background-min.jpg')");

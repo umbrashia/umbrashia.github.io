@@ -13,70 +13,70 @@
     <meta name="google-site-verification" content="4cc4OIRHxn5ppIT5pSej6pSwCtnnA1Ix41-7aCFxiTI">
     <meta property="og:image"
         content="https://umbrashia.github.io/shantanu-sharma-cv/images/shantanu-sharma-cv-1.jpg" />
-    
-    
+
+
     <link rel="shortcut icon" href="images/shantanu-sharma-cv.ico" type="image/x-icon">
     <link rel="icon" href="images/shantanu-sharma-cv.ico" type="image/x-icon">
-<!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+    <!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
     <script>
         // 
         // dynamically add base tag as well as css and javascript files.
         // we can't add css/js the usual way, because some browsers (FF) eagerly prefetch resources
         // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
-//         (function () {
-            var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
-                rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
-                baseUrl = "https://umbrashia.github.io/"//location.href.replace(rUrl, indexFile),
-            production = "https://umbrashia.github.io/shantanu-sharma-cv/",
-                headEl = document.getElementsByTagName('head')[0],
-                sync = true;
-        
-        
-            function addTag(name, attributes, sync) {
-                var el = document.createElement(name),
-                    attrName;
+        //         (function () {
+        var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+            rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
+            baseUrl = "https://umbrashia.github.io/"//location.href.replace(rUrl, indexFile),
+        production = "https://umbrashia.github.io/shantanu-sharma-cv/",
+            headEl = document.getElementsByTagName('head')[0],
+            sync = true;
 
-                for (attrName in attributes) {
-                    el.setAttribute(attrName, attributes[attrName]);
-                }
 
-                sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+        function addTag(name, attributes, sync) {
+            var el = document.createElement(name),
+                attrName;
+
+            for (attrName in attributes) {
+                el.setAttribute(attrName, attributes[attrName]);
             }
 
-            function outerHTML(node) {
-                // if IE, Chrome take the internal method otherwise build one
-                return node.outerHTML || (
-                    function (n) {
-                        var div = document.createElement('div'), h;
-                        div.appendChild(n);
-                        h = div.innerHTML;
-                        div = null;
-                        return h;
-                    })(node);
-            }
+            sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+        }
 
-            //addTag('base', {href: baseUrl});
+        function outerHTML(node) {
+            // if IE, Chrome take the internal method otherwise build one
+            return node.outerHTML || (
+                function (n) {
+                    var div = document.createElement('div'), h;
+                    div.appendChild(n);
+                    h = div.innerHTML;
+                    div = null;
+                    return h;
+                })(node);
+        }
 
-//             addTag('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto', type: 'text/css' });
-            addTag('link', { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', type: 'text/css' });
+        //addTag('base', {href: baseUrl});
 
-            addTag('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type: 'text/css' });
-            addTag('link', { rel: 'stylesheet', href: 'css/style.css', type: 'text/css' });
-            // addTag('link', { rel: 'stylesheet', href: '', type: 'text/css' });
+        //             addTag('link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto', type: 'text/css' });
+        addTag('link', { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', type: 'text/css' });
+
+        addTag('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type: 'text/css' });
+        addTag('link', { rel: 'stylesheet', href: 'css/style.css', type: 'text/css' });
+        // addTag('link', { rel: 'stylesheet', href: '', type: 'text/css' });
 
 
-            addTag('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' }, sync);
-            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' }, sync);
-            addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', async:true }, sync);
-            addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
-            addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
+        addTag('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js' }, sync);
+        addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' }, sync);
+        addTag('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', async: true }, sync);
+        addTag('script', { src: 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js' }, sync);
+        addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js' }, sync);
             // addTag('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js' }, sync);
-            
+
 //         })();
     </script>
-    
+
     <!-- Google Tag Manager -->
-    
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149839561-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -131,12 +131,13 @@
         /* ---- particles.js container ---- */
 
         .particles-js {
-/*             position: absolute;
+            /*             position: absolute;
             width: 100%;
             height: 100%; */
 
             /* background-color: #fff; */
         }
+
         .particles-js-custom {
             position: absolute;
             width: 100%;
@@ -155,8 +156,8 @@
 
         .card {
             position: inherit !important;
-/*             background-color: #ffffffd9 !important; */ 
-/*             CARD OPERICITY */
+            /*             background-color: #ffffffd9 !important; */
+            /*             CARD OPERICITY */
         }
 
         .list-group-item {
@@ -171,7 +172,8 @@
             object-fit: cover;
             height: 230px;
         }
-        .myH1{
+
+        .myH1 {
             font-size: 20px;
         }
     </style>
@@ -183,40 +185,41 @@
         <div class="row  justify-content">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="with-relative"> 
+                    <div class="with-relative">
                         <div id="particles-js4" class="particles-js-custom"></div>
-                        <img style="min-height: 259px;" class="card-img-top lazy" src="images/Eclipse-1s-200px.svg" data-src="images/shantanu-sharma-cv-1.jpg"
+                        <img style="min-height: 259px;" class="card-img-top lazy" src="images/Eclipse-1s-200px.svg"
+                            data-src="images/shantanu-sharma-cv-1.jpg"
                             data-srcset="images/shantanu-sharma-cv-1.jpg, images/shantanu-sharma-cv-1-min.jpg 2x"
                             alt="Shantanu Sharma CV" title="Shananu Sharma CV">
                     </div>
                     <div class="card-body">
 
                         <h1 class="card-title text-primary ml12 myH1" role="h1" aria-label="SHANTANU SHARMA"><b>SHANTANU
-                            SHARMA</b> <br><small>(Sr. Software
-                            Engineer)</small></h1>
+                                SHARMA</b> <br><small>(Sr. Software
+                                Engineer)</small></h1>
                         <p class="card-text ">
 
-                            <table class="w-100">
-                                <tr>
-                                    <td class="text-primary">Email </td>
-                                    <td>-&nbsp;&nbsp;</td>
-                                    <td><a class="with-relative text-success"
-                                            href="mailto:shantanu34@outlook.com"><b><span role="h2"
-                                                    aria-label="email">shantanu34@outlook.com</span> </b></a> </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-primary">Mobile </td>
-                                    <td>-&nbsp;&nbsp;</td>
-                                    <td><a class="with-relative text-success"
-                                            href="tel:917503633251"><b>+91-7503633251</b></a></td>
-                                </tr>
-                                <!-- <tr>
+                        <table class="w-100">
+                            <tr>
+                                <td class="text-primary">Email </td>
+                                <td>-&nbsp;&nbsp;</td>
+                                <td><a class="with-relative text-success" href="mailto:shantanu34@outlook.com"><b><span
+                                                role="h2" aria-label="email">shantanu34@outlook.com</span> </b></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-primary">Mobile </td>
+                                <td>-&nbsp;&nbsp;</td>
+                                <td><a class="with-relative text-success"
+                                        href="tel:917503633251"><b>+91-7503633251</b></a></td>
+                            </tr>
+                            <!-- <tr>
                                     <td class="text-primary">D.O.B </td>
                                     <td>-&nbsp;&nbsp;</td>
                                     <td><a class="with-relative text-success"
                                             ><b>30th Aug 1993</b></a></td>
                                 </tr> -->
-                            </table>
+                        </table>
 
                         </p>
 
@@ -255,8 +258,8 @@
                                 </div>
                             </div>
                         </li>
-                       
-                        
+
+
                         <li class="list-group-item">
                             Website Scraping & Hacking
                             <div class="progress">
@@ -377,7 +380,7 @@
                                 <p class="mb-1  text-primary">Graduated From DELHI UNIVERSTY NORTH CAMPUS, DELHI</p>
                                 <small class=" text-info">2011 - 2014</small>
                             </a>
-                            
+
                         </div>
 
                     </div>
@@ -396,7 +399,8 @@
                                     </h5>
                                     <small></small>
                                 </div>
-                                <p class="mb-1  text-primary">Post Graduate Diploma in Computer Applications (PGDCA) From IGNOU</p>
+                                <p class="mb-1  text-primary">Post Graduate Diploma in Computer Applications (PGDCA)
+                                    From IGNOU</p>
                                 <small class=" text-info">2015 - 2017</small>
                             </a>
                             <a class="list-group-item list-group-item-action flex-column align-items-start ">
@@ -426,8 +430,7 @@
                             <div class="carousel-inner rounded">
                                 <div class="carousel-item active">
                                     <img class="lazy rounded d-block w-100" title="shantanu sharma CV"
-                                        src="images/Eclipse-1s-200px.svg"  
-                                        data-src="images/shantanu-sharma-cv-2.jpg"
+                                        src="images/Eclipse-1s-200px.svg" data-src="images/shantanu-sharma-cv-2.jpg"
                                         data-srcset="images/shantanu-sharma-cv-2.jpg 2x, images/shantanu-sharma-cv-2.jpg 1x"
                                         alt="shantanu sharma CV">
                                 </div>
@@ -439,8 +442,7 @@
                                         alt="shantanu sharma" title="shantanu sharma CV">
                                 </div> -->
                                 <div class="carousel-item">
-                                    <img class="lazy rounded d-block w-100" 
-                                        src="images/Eclipse-1s-200px.svg" 
+                                    <img class="lazy rounded d-block w-100" src="images/Eclipse-1s-200px.svg"
                                         data-src="images/shantanu-sharma-cv-4.jpg"
                                         data-srcset="images/shantanu-sharma-cv-4.jpg 2x, images/shantanu-sharma-cv-4.jpg 1x"
                                         alt="shantanu sharma CV" title="shantanu sharma CV">
@@ -492,9 +494,10 @@
 
                             I Having More Than <span class="umbrashiaTimer" data-from="2015-01-01" data-to=""></span> Of
                             Experience On Enterprises Web Application Development
-                            in kreate technologies LLP IT Service & Product Based Company.<br />
-                            Enterprise Web Applications, Game Development, Web-Responsive Designing, Creative Graphics,
-                            Core Programming And Advance (OOPS-MVC) Programming Using NodeJS, Chrome Extention Development, TypeScript, AngularJS,
+                            in <b>kreate technologies LLP</b> IT Service & Product Based Company.<br />
+                            Enterprise Web Applications, Game Development,Hybrid App Development, 
+                            Core Programming And Advance (OOPS-MVC) Programming Using NodeJS, Chrome Extention
+                            Development, TypeScript, AngularJS,
                             JavaScript, MongoDB, LIVE* Streaming(Kafka & SocketIO), GAME* Development,
                             PHP, HTML, SASS, LESS, AWS Server
                             And MVC Approach etc.<br />
@@ -547,7 +550,8 @@
                                 </div>
                                 <p class="mb-1">Currently Working As Sr. Software Engineer </p>
                                 <small>Experience with Live Streaming(SocketIO), Chrome Extention , AWS,
-                                    AngularJS, TypeScript, Node 14, Docker, DOcumentDB, MongoDB, MySql, PHP, Laravel and CI etc</small>
+                                    AngularJS, TypeScript, Node 14, Docker, DOcumentDB, MongoDB, MySql, PHP, Laravel and
+                                    CI etc</small>
                             </a>
                             <a class="list-group-item list-group-item-action flex-column align-items-start">
                                 <div class="d-flex w-100 justify-content-between">
@@ -591,8 +595,115 @@
 
 
 
+                <div class="card cardSpacing">
+                    <div id="particles-js3" class="particles-js"></div>
+                    <div class="card-body">
+                        <h5 class="card-title text-danger"><i class="fa fa-star" aria-hidden="true"></i>
+                            PROJECTS</h5>
+                        <div class="card-group ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">shira 24</h5>
+                                    <p class="card-text"><span class="text-success">Live Audio/Radio Streaming</span>
+                                        <br /><small>Using Python3.6, JS, Jquery, Mysql, PHP etc.</small>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Perf Engage</h5>
+                                    <p class="card-text"><span class="text-success">Enhence Own bussinuss</span>
+                                        <br /><small>Using Cordova/Hybrid App, ANGULAR-6, JS, Jquery, Mysql, PHP
+                                            etc.</small>
+                                    </p>
+                                </div>
+                            </div>
 
 
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Triplets </h5>
+                                    <p class="card-text"><span class="text-success">Sell/Purchase/Rent Property</span>
+                                        <br /><small>Using ANGULAR-6, JS, Jquery, Mysql, PHP etc.</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-group ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">PowerChallenge</h5>
+                                    <p class="card-text"><span class="text-success">Game Development</span>
+                                        <br /><small>Quiz based game. Using AngularJS, JS, Jquery, Mysql, PHP
+                                            etc.</small>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">EBIKEFIND </h5>
+                                    <p class="card-text"><span class="text-success">Enhence Own bussinuss</span>
+                                        <br /><small>Commerce eBike sale/purchase based website. some feature have user,
+                                            users-plus professional users/sellers etc on advance jQuery and PHP.
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Instalets </h5>
+                                    <p class="card-text"><span class="text-success">Sell/Purchase/Rent Property</span>
+                                        <br /><small>U,K(United Kingdom) Property price calculate based website based on
+                                            Jquery And PHP</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-group">
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">SFCMS </h5>
+                                    <p class="card-text"><span class="text-success">Salon Service Booking</span>
+                                        <br /><small>This Product Related To Survey, Feedback And Complaint Etc.
+                                            From E-Kiosk App, This App Can Help Gathering Input From Customers,
+                                            Then User Can Give Survey And Complaint from it</small>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Glamberry </h5>
+                                    <p class="card-text"><span class="text-success">Salon Service Booking</span>
+                                        <br /><small>Client Product making by Emobi Technologies Pvt. Ltd. This project
+                                            based on buy And Selling Books, managing articles and Managing News etc.
+                                            Managing Rest-API’s, EBS Payment Gateways and business logics .</small>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">BookMyNai </h5>
+                                    <p class="card-text"><span class="text-success">Salon Service Booking</span>
+                                        <br /><small>Client Product making by Emobi Technologies Pvt. Ltd. This project
+                                            based on buy And Selling Books, managing articles and Managing News etc.
+                                            Managing Rest-API’s, EBS Payment Gateways and business logics .</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
 
                 <div class="card cardSpacing">
                     <div id="particles-js2" class="particles-js"></div>
@@ -606,113 +717,10 @@
                         <li class="list-group-item">Developing The Code As Per Requirements.</li>
                         <li class="list-group-item">Managing Databases all type of needs.</li>
                         <li class="list-group-item">Development Service &amp; Product Based Software.</li>
-                        <li class="list-group-item">Managing Hosting&rsquo;s And Cloud Servers (Amazon, AWS, RSD And
+                        <li class="list-group-item">Managing Hosting&rsquo;s And Cloud Servers (Docker, Amazon, AWS, RSD And
                             EC2)</li>
                         <li class="list-group-item">Unit Testing And Integration Testing Of Owned Use Cases.</li>
                     </ul>
-                </div>
-
-
-
-                <div class="card cardSpacing">
-                    <div id="particles-js3" class="particles-js"></div>
-                    <div class="card-body">
-                        <h5 class="card-title text-danger"><i class="fa fa-star" aria-hidden="true"></i>
-                            PROJECTS</h5>
-                        <div class="card-group ">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">shira 24</h5>
-                                    <p class="card-text"><span class="text-success">Live Audio/Radio Streaming</span>
-                                        <br /><small>Using Python3.6, JS, Jquery, Mysql, PHP etc.</small></p>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Perf Engage</h5>
-                                    <p class="card-text"><span class="text-success">Enhence Own bussinuss</span>
-                                        <br /><small>Using Cordova/Hybrid App, ANGULAR-6, JS, Jquery, Mysql, PHP
-                                            etc.</small></p>
-                                </div>
-                            </div>
-
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Triplets </h5>
-                                    <p class="card-text"><span class="text-success">Sell/Purchase/Rent Property</span>
-                                        <br /><small>Using ANGULAR-6, JS, Jquery, Mysql, PHP etc.</small></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-group ">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">PowerChallenge</h5>
-                                    <p class="card-text"><span class="text-success">Game Development</span>
-                                        <br /><small>Quiz based game. Using AngularJS, JS, Jquery, Mysql, PHP
-                                            etc.</small></p>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">EBIKEFIND </h5>
-                                    <p class="card-text"><span class="text-success">Enhence Own bussinuss</span>
-                                        <br /><small>Commerce eBike sale/purchase based website. some feature have user,
-                                            users-plus professional users/sellers etc on advance jQuery and PHP.
-                                        </small></p>
-                                </div>
-                            </div>
-
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Instalets </h5>
-                                    <p class="card-text"><span class="text-success">Sell/Purchase/Rent Property</span>
-                                        <br /><small>U,K(United Kingdom) Property price calculate based website based on
-                                            Jquery And PHP</small></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-group">
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">SFCMS </h5>
-                                    <p class="card-text"><span class="text-success">Salon Service Booking</span>
-                                        <br /><small>This Product Related To Survey, Feedback And Complaint Etc.
-                                            From E-Kiosk App, This App Can Help Gathering Input From Customers,
-                                            Then User Can Give Survey And Complaint from it</small></p>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Glamberry </h5>
-                                    <p class="card-text"><span class="text-success">Salon Service Booking</span>
-                                        <br /><small>Client Product making by Emobi Technologies Pvt. Ltd. This project
-                                            based on buy And Selling Books, managing articles and Managing News etc.
-                                            Managing Rest-API’s, EBS Payment Gateways and business logics .</small></p>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">BookMyNai </h5>
-                                    <p class="card-text"><span class="text-success">Salon Service Booking</span>
-                                        <br /><small>Client Product making by Emobi Technologies Pvt. Ltd. This project
-                                            based on buy And Selling Books, managing articles and Managing News etc.
-                                            Managing Rest-API’s, EBS Payment Gateways and business logics .</small></p>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
                 </div>
 
                 <div class="card cardSpacing">
@@ -723,11 +731,13 @@
 
                     </div>
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Stocks/Share Invester in NSE & BSE also providing guidance.</li>
                         <li class="list-group-item">Playing guitar in every morning.</li>
-                        <li class="list-group-item">Playing table tennis (Inter-State Level).</li>
+                        <li class="list-group-item">Playing table tennis (Intra-State Level).</li>
                         <li class="list-group-item">Interested in Sci-Fi stories and movies.</li>
-                        <li class="list-group-item">I want to make machine like "The SKY-NET" A.I because
-                            I want to see how will happne if logic, target and development done by Machine. </li>
+                        <li class="list-group-item">Research in security related information.</li>
+                        <li class="list-group-item">Reading balance sheet, cashflow sheet & other statements to check
+                            company finance related health.</li>
                     </ul>
                 </div>
 
@@ -753,7 +763,7 @@
 
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<!--     <script async type="text/javascript"
+    <!--     <script async type="text/javascript"
         src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9"></script> -->
     <script>
         window.mobilecheck = function () {
@@ -785,21 +795,21 @@
             }
         });
         $(window).on('load', function () {
-            setTimeout(function () {                
-                addTag('script', { src: 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9' ,async:true }, false);
-            },2000),
             setTimeout(function () {
-                if (window.mobilecheck() === false) {
+                addTag('script', { src: 'https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c520471dd73a1b9', async: true }, false);
+            }, 2000),
+                setTimeout(function () {
+                    if (window.mobilecheck() === false) {
 
 
 
-    //                     $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
-    //                     $("body").css("background-image", "url('images/background.jpg')");
+                        //                     $("body").css("background-image", "url('https://picsum.photos/" + $(this).width() + "/" + $(this).height() + "/?random')");
+                        //                     $("body").css("background-image", "url('images/background.jpg')");
                         $("body").css("background-image", "url('images/background-min.jpg')");
 
 
-                }
-             }, 0);
+                    }
+                }, 0);
             //----------------------------------
 
             //---------
@@ -834,9 +844,9 @@
                 { color: "#9a4fdc", stroke: "#fca300" }
             ];
             if (true || window.mobilecheck() === false) {
-                
-                var lenPartculs=colorStars.length;
-                lenPartculs=5;
+
+                var lenPartculs = colorStars.length;
+                lenPartculs = 5;
                 for (let ix = 4; ix < lenPartculs; ix++)
                     setTimeout(function (index) {
                         particlesJS("particles-js" + index,

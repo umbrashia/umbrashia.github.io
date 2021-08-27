@@ -189,6 +189,15 @@
             float: left;
             margin-right: 10px;
         }
+
+        @media (min-width: 576px) {
+            .card-group>.card:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+            }
+        }
     </style>
     <br />
 
@@ -536,7 +545,7 @@
                                             data-src="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
                                             data-srcset="https://github.githubassets.com/images/modules/profile/badge--acv-64.png"
                                             alt="Arctic Code Vault Contributor" height="50px" />
-                                        <a href="https://github.com/umbrashia" target="_blank"
+                                        <a href="https://github.com/umbrashia" target="_blank" title="GITHUB"
                                             class="text-primary"><small>Arctic Code Vault Contributor</small></a>
                                     </p>
                                 </div>
@@ -544,7 +553,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <a href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
+                                        <a title="stackoverflow"
+                                            href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
                                             target="_blank">
                                             <svg aria-hidden="true" class="achivement fc-silver svg-spot spotAward"
                                                 width="48" height="48" viewBox="0 0 48 48">
@@ -561,7 +571,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <a href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
+                                        <a title="stackoverflow"
+                                            href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
                                             target="_blank">
 
                                             <svg aria-hidden="true" class="achivement fc-bronze svg-spot spotAward"
@@ -583,9 +594,10 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <a href="https://www.npmjs.com/~umbrashia"
-                                            target="_blank">
-                                            <svg class="achivement" style="height: 20px;margin-bottom: 14px;margin-top: 10px;" viewBox="0 0 780 250">
+                                        <a title="NPM" href="https://www.npmjs.com/~umbrashia" target="_blank">
+                                            <svg class="achivement"
+                                                style="height: 20px;margin-bottom: 14px;margin-top: 10px;"
+                                                viewBox="0 0 780 250">
                                                 <path fill="#231F20"
                                                     d="M240,250h100v-50h100V0H240V250z M340,50h50v100h-50V50z M480,0v200h100V50h50v150h50V50h50v150h50V0H480z M0,200h100V50h50v150h50V0H0V200z">
                                                 </path>
@@ -599,7 +611,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <a href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
+                                        <a title="stackoverflow"
+                                            href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
                                             target="_blank">
                                             <i style="font-size: 46px; color: #f48024;"
                                                 class="achivement fab fa-stack-overflow"></i>
@@ -612,7 +625,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <a href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
+                                        <a title="stackoverflow"
+                                            href="https://stackoverflow.com/users/11043913/shantanu-sharma?tab=profile"
                                             target="_blank">
                                             <i style="font-size: 46px; color: #f48024;"
                                                 class="achivement fab fa-stack-overflow"></i>
@@ -624,7 +638,7 @@
                             </div>
                         </div><br>
 
-                        
+
 
                     </div>
                 </div>
@@ -682,33 +696,57 @@
                                 <small>Experience with Live Streaming, Game Devlopment, AWS,
                                     AngularJS, JavaScript, Node 8, MySql, FabricJs, Typescript and Python3.6 etc</small>
                             </a>
-                            <a class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">SourceSoft Solutions Pvt. Ltd.</h5>
-                                    <small>2.8 Years</small>
-                                </div>
-                                <p class="mb-1">Currently Working As Sr. Software Engineer </p>
-                                <small>Experience with PHP, Live Streaming, Game Devlopment, AWS,
-                                    AngularJS, JavaScript, Node 8, MySql, FabricJs, Typescript and Python3.6 etc</small>
-                            </a>
-                            <a class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">Emobi Technologies Pvt. Ltd.</h5>
-                                    <small>9 Months</small>
-                                </div>
-                                <p class="mb-1">Worked As Sr. Software Engineer </p>
-                                <small>Experience with AngularJS, JavaScript, Laravel, MySql, Core PHP etc</small>
-                            </a>
-                            <a class="list-group-item list-group-item-action flex-column align-items-start">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">NxtLife Technologies Pvt. Ltd.</h5>
-                                    <small>9 Months</small>
-                                </div>
-                                <p class="mb-1">Jr. Software Engineer</p>
-                                <small>Experience with Android Development, MySql, AngularJS, JavaScript, Jquery, Core
-                                    PHP etc</small>
-                            </a>
+
                         </div>
+
+
+                        <div class="accordion" id="accordionExample1">
+                            <div class="" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button"
+                                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                                        aria-controls="collapseTwo">
+                                        Show More...
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample1">
+
+                                <div class="list-group">
+                                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">SourceSoft Solutions Pvt. Ltd.</h5>
+                                            <small>2.8 Years</small>
+                                        </div>
+                                        <p class="mb-1">Currently Working As Sr. Software Engineer </p>
+                                        <small>Experience with PHP, Live Streaming, Game Devlopment, AWS,
+                                            AngularJS, JavaScript, Node 8, MySql, FabricJs, Typescript and Python3.6
+                                            etc</small>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">Emobi Technologies Pvt. Ltd.</h5>
+                                            <small>9 Months</small>
+                                        </div>
+                                        <p class="mb-1">Worked As Sr. Software Engineer </p>
+                                        <small>Experience with AngularJS, JavaScript, Laravel, MySql, Core PHP
+                                            etc</small>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h5 class="mb-1">NxtLife Technologies Pvt. Ltd.</h5>
+                                            <small>9 Months</small>
+                                        </div>
+                                        <p class="mb-1">Jr. Software Engineer</p>
+                                        <small>Experience with Android Development, MySql, AngularJS, JavaScript,
+                                            Jquery, Core
+                                            PHP etc</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
@@ -851,15 +889,34 @@
                             EXTRA-CURRICULAR ACTIVITIES</h5>
 
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Stocks/Share Invester in NSE & BSE also providing guidance.</li>
-                        <li class="list-group-item">Playing guitar in every morning.</li>
-                        <li class="list-group-item">Playing table tennis (Intra-State Level).</li>
-                        <li class="list-group-item">Interested in Sci-Fi stories and movies.</li>
-                        <li class="list-group-item">Research in security related information.</li>
-                        <li class="list-group-item">Reading balance sheet, cashflow sheet & other statements to check
-                            company finance related health.</li>
-                    </ul>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Click to show...
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Stocks/Share Invester in NSE & BSE also providing
+                                    guidance.</li>
+                                <li class="list-group-item">Playing guitar in every morning.</li>
+                                <li class="list-group-item">Playing table tennis (Intra-State Level).</li>
+                                <li class="list-group-item">Interested in Sci-Fi stories and movies.</li>
+                                <li class="list-group-item">Research in security related information.</li>
+                                <li class="list-group-item">Reading balance sheet, cashflow sheet & other
+                                    statements to check
+                                    company finance related health.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
                 </div>
 
             </div>

@@ -152,26 +152,26 @@ const App = {
             return;
 
         const colorStars = [
-
-            {
-                color: "#2fe85b",
-                stroke: "#9a4fdc"
-            },
-
             {
                 color: "#00b3ff",
                 stroke: "#fc0000"
             },
+            // {
+            //     color: "#2fe85b",
+            //     stroke: "#9a4fdc"
+            // },
 
-            {
-                color: "#9a4fdc",
-                stroke: "#fca300"
-            },
+           
 
-            {
-                color: "#cdcc56",
-                stroke: "#00edfc"
-            }
+            // {
+            //     color: "#9a4fdc",
+            //     stroke: "#fca300"
+            // },
+
+            // {
+            //     color: "#cdcc56",
+            //     stroke: "#00edfc"
+            // }
 
         ];
 

@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Market Price & Weight Calculator</title>
+    
+    <style>
+        :root {
+            --bg-color: #0d131f;
+            --card-bg: #161f30;
+            --card-border: #233148;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --input-bg: #0f172a;
+            --input-border: #334155;
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #064e3b;
+            --primary-text: #a7f3d0;
+            --pill-bg: #1e293b;
+            --pill-text: #cbd5e1;
+            --pill-active-bg: #10b981;
+            --pill-active-text: #022c22;
+            --hero-bg: linear-gradient(135deg, #059669 0%, #047857 100%);
+            --hero-text: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
+        }
+
+        .light-theme {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --card-border: #cbd5e1;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --input-bg: #f8fafc;
+            --input-border: #cbd5e1;
+            --primary: #059669;
+            --primary-dark: #047857;
+            --primary-light: #d1fae5;
+            --primary-text: #065f46;
+            --pill-bg: #e2e8f0;
+            --pill-text: #334155;
+            --pill-active-bg: #059669;
+            --pill-active-text: #ffffff;
+            --hero-bg: linear-gradient(135deg, #059669 0%, #047857 100%);
+            --hero-text: #ffffff;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-bottom: 50px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 14px;
+        }
+
+        /* HEADER & STATUS BADGE */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-title {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .brand-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary-text);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulse-green 1.5s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-md);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-icon:active {
+            transform: scale(0.92);
+        }
+
+        /* MODE SWITCHER */
+        .mode-switcher {
+            display: flex;
+            background: var(--card-border);
+            padding: 3px;
+            border-radius: var(--radius-md);
+            margin-bottom: 14px;
+        }
+
+        .mode-btn {
+            flex: 1;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .mode-btn.active {
+            background: var(--card-bg);
+            color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        /* CARDS & INPUTS */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 14px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .card-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .label {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-prefix, .input-suffix {
+            position: absolute;
+            font-weight: 800;
+            font-size: 14px;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .input-prefix { left: 10px; }
+        .input-suffix { right: 10px; }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background: var(--input-bg);
+            border: 1.5px solid var(--input-border);
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 800;
+            outline: none;
+        }
+
+        input[type="number"]:focus, input[type="text"]:focus {
+            border-color: var(--primary);
+        }
+
+        .has-prefix { padding-left: 28px !important; }
+        .has-suffix { padding-right: 30px !important; }
+
+        .pill-group {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .pill {
+            background: var(--pill-bg);
+            color: var(--pill-text);
+            border: none;
+            padding: 8px 2px;
+            border-radius: var(--radius-sm);
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .pill:active {
+            transform: scale(0.95);
+        }
+
+        .pill.active-pill {
+            background: var(--pill-active-bg);
+            color: var(--pill-active-text);
+        }
+
+        .stepper-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .btn-step {
+            padding: 10px 4px;
+            background: var(--pill-bg);
+            color: var(--pill-text);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 11px;
+            font-weight: 800;
+            cursor: pointer;
+            min-width: 42px;
+            text-align: center;
+        }
+
+        .btn-step:active {
+            transform: scale(0.92);
+        }
+
+        .stepper-input {
+            flex: 1;
+            text-align: center;
+            font-size: 18px !important;
+            font-weight: 900 !important;
+        }
+
+        .range-slider {
+            width: 100%;
+            height: 8px;
+            background: var(--input-border);
+            border-radius: 4px;
+            outline: none;
+            -webkit-appearance: none;
+            margin: 8px 0 4px 0;
+            cursor: pointer;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            border: 2px solid #ffffff;
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9px;
+            font-weight: 800;
+            color: var(--text-muted);
+        }
+
+        /* HERO CARD */
+        .hero-card {
+            background: var(--hero-bg);
+            color: var(--hero-text);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.4);
+            margin-bottom: 12px;
+        }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 6px;
+        }
+
+        .hero-tag {
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #a7f3d0;
+        }
+
+        .rounding-select {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 6px;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .hero-body {
+            text-align: center;
+            padding: 4px 0 8px 0;
+        }
+
+        .hero-value-container {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 2px;
+            transition: transform 0.1s ease-out;
+        }
+
+        .pulse-anim {
+            animation: hero-pop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes hero-pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-currency {
+            font-size: 26px;
+            font-weight: 800;
+            color: #a7f3d0;
+        }
+
+        .hero-value {
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .hero-unit {
+            font-size: 22px;
+            font-weight: 800;
+            color: #a7f3d0;
+            margin-left: 2px;
+        }
+
+        .hero-subtext {
+            font-size: 12px;
+            color: #d1fae5;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .formula-box {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px dashed rgba(255, 255, 255, 0.35);
+            border-radius: var(--radius-md);
+            padding: 8px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .formula-title {
+            font-size: 9px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.6px;
+            color: #a7f3d0;
+            margin-bottom: 2px;
+        }
+
+        .formula-text {
+            font-family: monospace;
+            font-size: 13px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .unit-rates {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .unit-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 6px 2px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .unit-label {
+            font-size: 8px;
+            color: #a7f3d0;
+            font-weight: 800;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .unit-val {
+            font-size: 12px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .btn-add-tally {
+            width: 100%;
+            margin-top: 12px;
+            padding: 12px;
+            background: #ffffff;
+            color: #065f46;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-add-tally:active {
+            transform: scale(0.97);
+        }
+
+        /* TALLY / BASKET */
+        .tally-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 10px;
+            background: var(--input-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 6px;
+        }
+
+        .tally-item-name {
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .tally-item-sub {
+            font-size: 10px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .tally-item-price {
+            font-size: 13px;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .btn-delete {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            padding: 2px;
+            margin-left: 8px;
+        }
+
+        .tally-summary {
+            background: var(--input-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .tally-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .tally-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .btn-tally-action {
+            padding: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #0f172a;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="brand">
+                <div class="brand-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h18"/></svg>
+                </div>
+                <div>
+                    <div class="brand-title">MarketCalc</div>
+                    <div class="brand-sub">Instant Price & Weight Calculator</div>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button class="btn-icon" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                    <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </button>
+                <button class="btn-icon" onclick="resetDefaults()" title="Reset All Fields">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- LIVE STATUS BADGE -->
+        <div style="text-align: center;">
+            <div class="status-badge">
+                <div class="pulse-dot"></div>
+                ● LIVE AUTO-CALCULATING
+            </div>
+        </div>
+
+        <!-- MODE SWITCHER -->
+        <div class="mode-switcher">
+            <button class="mode-btn active" id="btnModeWeight" onclick="switchCalculatorMode('weight')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 6v12"/></svg>
+                By Weight (g)
+            </button>
+            <button class="mode-btn" id="btnModeBudget" onclick="switchCalculatorMode('budget')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>
+                By Budget (₹)
+            </button>
+        </div>
+
+        <!-- CARD 1: QUOTED RATE -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">1. Quoted Rate</span>
+                <input type="text" id="itemName" value="Item 1" style="width: 100px; padding: 4px 6px; font-size: 11px; text-align: right;" placeholder="Item Name" oninput="calc()" onchange="calc()" onkeyup="calc()">
+            </div>
+
+            <div class="grid-2">
+                <div class="input-group">
+                    <label class="label">Quoted Price</label>
+                    <div class="input-wrapper">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="quotedPrice" value="80" step="any" min="0" class="has-prefix" oninput="calc()" onchange="calc()" onkeyup="calc()">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="label">For Weight</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="quotedWeight" value="250" step="any" min="1" class="has-suffix" oninput="calc()" onchange="calc()" onkeyup="calc()">
+                        <span class="input-suffix">g</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pill-group">
+                <button class="pill" id="qp100" onclick="setQuotedWeightPill(100)">100g</button>
+                <button class="pill active-pill" id="qp250" onclick="setQuotedWeightPill(250)">250g</button>
+                <button class="pill" id="qp500" onclick="setQuotedWeightPill(500)">500g</button>
+                <button class="pill" id="qp1000" onclick="setQuotedWeightPill(1000)">1kg</button>
+            </div>
+        </div>
+
+        <!-- CARD 2: TARGET SELECTION -->
+        <div class="card">
+            
+            <!-- BY WEIGHT CONTAINER -->
+            <div id="targetWeightSection">
+                <div class="card-header">
+                    <span class="card-title">2. Target Weight Needed</span>
+                    <span id="targetWeightBadge" style="font-size: 10px; font-weight: 800; color: var(--primary); background: var(--primary-light); padding: 2px 6px; border-radius: 10px;">150g</span>
+                </div>
+
+                <div class="stepper-container">
+                    <button class="btn-step" onclick="stepTargetWeight(-50)">-50g</button>
+                    <button class="btn-step" onclick="stepTargetWeight(-10)">-10g</button>
+                    <div class="input-wrapper" style="flex: 1;">
+                        <input type="number" id="targetWeight" value="150" min="1" step="any" class="stepper-input has-suffix" oninput="syncTargetFromInput()" onchange="syncTargetFromInput()" onkeyup="syncTargetFromInput()">
+                        <span class="input-suffix">g</span>
+                    </div>
+                    <button class="btn-step" onclick="stepTargetWeight(10)">+10g</button>
+                    <button class="btn-step" onclick="stepTargetWeight(50)">+50g</button>
+                </div>
+
+                <input type="range" id="targetWeightSlider" class="range-slider" min="1" max="2000" step="1" value="150" oninput="syncTargetFromSlider()" onchange="syncTargetFromSlider()">
+                <div class="range-labels">
+                    <span>1g</span>
+                    <span>500g</span>
+                    <span>1000g</span>
+                    <span>2000g</span>
+                </div>
+
+                <div class="pill-group">
+                    <button class="pill" id="tp100" onclick="setTargetWeightPill(100)">100g</button>
+                    <button class="pill" id="tp250" onclick="setTargetWeightPill(250)">250g</button>
+                    <button class="pill" id="tp500" onclick="setTargetWeightPill(500)">500g</button>
+                    <button class="pill" id="tp1000" onclick="setTargetWeightPill(1000)">1kg</button>
+                </div>
+            </div>
+
+            <!-- BY BUDGET CONTAINER -->
+            <div id="targetBudgetSection" class="hidden">
+                <div class="card-header">
+                    <span class="card-title">2. Your Target Budget</span>
+                </div>
+
+                <div class="stepper-container">
+                    <button class="btn-step" onclick="stepTargetBudget(-50)">-50</button>
+                    <button class="btn-step" onclick="stepTargetBudget(-10)">-10</button>
+                    <div class="input-wrapper" style="flex: 1;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="targetBudget" value="50" min="1" step="any" class="stepper-input has-prefix" oninput="calc()" onchange="calc()" onkeyup="calc()">
+                    </div>
+                    <button class="btn-step" onclick="stepTargetBudget(10)">+10</button>
+                    <button class="btn-step" onclick="stepTargetBudget(50)">+50</button>
+                </div>
+
+                <div class="pill-group" style="grid-template-columns: repeat(5, 1fr);">
+                    <button class="pill" onclick="setTargetBudgetPill(10)">₹10</button>
+                    <button class="pill" onclick="setTargetBudgetPill(20)">₹20</button>
+                    <button class="pill" onclick="setTargetBudgetPill(50)">₹50</button>
+                    <button class="pill" onclick="setTargetBudgetPill(100)">₹100</button>
+                    <button class="pill" onclick="setTargetBudgetPill(200)">₹200</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- HERO DISPLAY CARD -->
+        <div class="hero-card">
+            <div class="hero-header">
+                <span class="hero-tag" id="heroTag">PAYABLE AMOUNT</span>
+                <select class="rounding-select" id="roundingMode" onchange="calc()">
+                    <option value="exact">Exact Decimals</option>
+                    <option value="round">Nearest ₹1</option>
+                    <option value="half">Nearest 50p</option>
+                </select>
+            </div>
+
+            <div class="hero-body">
+                <div class="hero-value-container" id="heroValBox">
+                    <span class="hero-currency" id="heroCurrency">₹</span>
+                    <span class="hero-value" id="heroValue">0.00</span>
+                    <span class="hero-unit hidden" id="heroUnit">g</span>
+                </div>
+                <div class="hero-subtext" id="heroSubtext">for 0g of Item</div>
+            </div>
+
+            <!-- DYNAMIC MATH FORMULA -->
+            <div class="formula-box">
+                <div class="formula-title">DYNAMIC MATH FORMULA</div>
+                <div class="formula-text" id="formulaText">(₹0 ÷ 0g) × 0g = ₹0.00</div>
+            </div>
+
+            <!-- RATE BREAKDOWN GRID -->
+            <div class="unit-rates">
+                <div class="unit-card">
+                    <span class="unit-label">RATE / 1 GRAM</span>
+                    <span class="unit-val" id="rate1g">₹0.00</span>
+                </div>
+                <div class="unit-card">
+                    <span class="unit-label">RATE / 100G</span>
+                    <span class="unit-val" id="rate100g">₹0.00</span>
+                </div>
+                <div class="unit-card">
+                    <span class="unit-label">RATE / 1 KG</span>
+                    <span class="unit-val" id="rate1kg">₹0.00</span>
+                </div>
+            </div>
+
+            <button class="btn-add-tally" onclick="addToBasket()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg>
+                ADD TO SHOPPING BASKET
+            </button>
+        </div>
+
+        <!-- SHOPPING BASKET -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Shopping Basket</span>
+                <span id="basketCountBadge" style="font-size: 10px; font-weight: 800; color: var(--text-muted);">0 Items</span>
+            </div>
+
+            <div id="basketList">
+                <div style="text-align: center; padding: 14px; color: var(--text-muted); font-size: 11px; font-weight: 600;">
+                    Basket is empty.
+                </div>
+            </div>
+
+            <div id="basketSummaryBox" class="tally-summary hidden">
+                <div class="tally-summary-row">
+                    <span>GRAND TOTAL:</span>
+                    <span id="basketGrandTotal" style="color: var(--primary); font-size: 16px;">₹0.00</span>
+                </div>
+                <div class="tally-actions">
+                    <button class="btn-tally-action" onclick="copyBasketText()">Copy List</button>
+                    <button class="btn-tally-action" style="color: #ef4444;" onclick="clearBasket()">Clear All</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TOAST POPUP -->
+    <div class="toast" id="toastBox">Action completed</div>
+
+    <script>
+        // Global App State
+        let currentMode = 'weight'; // 'weight' or 'budget'
+        let shoppingBasket = [];
+
+        // Helper shorthand
+        function getEl(id) {
+            return document.getElementById(id);
+        }
+
+        // Atomic Main Calculation Function
+        function calc() {
+            try {
+                // 1. Read Inputs Direct from DOM
+                const Pq = parseFloat(getEl('quotedPrice').value) || 0;
+                const Wq = Math.max(0.0001, parseFloat(getEl('quotedWeight').value) || 1);
+                const Wt = parseFloat(getEl('targetWeight').value) || 0;
+                const Bt = parseFloat(getEl('targetBudget').value) || 0;
+                const name = getEl('itemName').value.trim() || 'Item';
+                const rounding = getEl('roundingMode').value;
+
+                // 2. Unit Rates
+                const ratePerGram = Pq / Wq;
+                const ratePer100g = ratePerGram * 100;
+                const ratePer1kg = ratePerGram * 1000;
+
+                // Update Rate Cards
+                getEl('rate1g').textContent = '₹' + ratePerGram.toFixed(2);
+                getEl('rate100g').textContent = '₹' + ratePer100g.toFixed(2);
+                getEl('rate1kg').textContent = '₹' + ratePer1kg.toFixed(2);
+                getEl('targetWeightBadge').textContent = Wt + 'g';
+
+                let heroFormatted = '0.00';
+
+                if (currentMode === 'weight') {
+                    // Calculating PRICE for target WEIGHT
+                    const rawPrice = ratePerGram * Wt;
+
+                    if (rounding === 'round') {
+                        heroFormatted = Math.round(rawPrice).toString();
+                    } else if (rounding === 'half') {
+                        heroFormatted = (Math.round(rawPrice * 2) / 2).toFixed(2);
+                    } else {
+                        heroFormatted = rawPrice.toFixed(2);
+                    }
+
+                    getEl('heroValue').textContent = heroFormatted;
+                    getEl('heroSubtext').innerHTML = `for <strong>${Wt}g</strong> of <strong>${name}</strong>`;
+                    getEl('formulaText').textContent = `(₹${Pq} ÷ ${Wq}g) × ${Wt}g = ₹${heroFormatted}`;
+
+                } else {
+                    // Calculating WEIGHT for target BUDGET
+                    const rawWeight = Pq > 0 ? (Bt / Pq) * Wq : 0;
+
+                    if (rounding === 'round') {
+                        heroFormatted = Math.round(rawWeight).toString();
+                    } else if (rounding === 'half') {
+                        heroFormatted = (Math.round(rawWeight * 2) / 2).toFixed(1);
+                    } else {
+                        heroFormatted = rawWeight.toFixed(1);
+                    }
+
+                    getEl('heroValue').textContent = heroFormatted;
+                    getEl('heroSubtext').innerHTML = `weight for <strong>₹${Bt}</strong> budget on <strong>${name}</strong>`;
+                    getEl('formulaText').textContent = `(₹${Bt} ÷ ₹${Pq}) × ${Wq}g = ${heroFormatted}g`;
+                }
+
+                // Visual Animation Trigger
+                const valBox = getEl('heroValBox');
+                valBox.classList.remove('pulse-anim');
+                void valBox.offsetWidth; // Force Reflow
+                valBox.classList.add('pulse-anim');
+
+            } catch (err) {
+                console.error("Calculation Error: ", err);
+            }
+        }
+
+        // Mode Switching
+        function switchCalculatorMode(mode) {
+            currentMode = mode;
+            if (mode === 'weight') {
+                getEl('btnModeWeight').classList.add('active');
+                getEl('btnModeBudget').classList.remove('active');
+                getEl('targetWeightSection').classList.remove('hidden');
+                getEl('targetBudgetSection').classList.add('hidden');
+                getEl('heroTag').textContent = 'PAYABLE AMOUNT';
+                getEl('heroCurrency').classList.remove('hidden');
+                getEl('heroUnit').classList.add('hidden');
+            } else {
+                getEl('btnModeBudget').classList.add('active');
+                getEl('btnModeWeight').classList.remove('active');
+                getEl('targetBudgetSection').classList.remove('hidden');
+                getEl('targetWeightSection').classList.add('hidden');
+                getEl('heroTag').textContent = 'WEIGHT YOU GET';
+                getEl('heroCurrency').classList.add('hidden');
+                getEl('heroUnit').classList.remove('hidden');
+            }
+            calc();
+        }
+
+        // Synchronize Slider and Inputs
+        function syncTargetFromSlider() {
+            const val = getEl('targetWeightSlider').value;
+            getEl('targetWeight').value = val;
+            calc();
+        }
+
+        function syncTargetFromInput() {
+            const val = getEl('targetWeight').value;
+            getEl('targetWeightSlider').value = val;
+            calc();
+        }
+
+        // Pill Click Handlers
+        function setQuotedWeightPill(g) {
+            getEl('quotedWeight').value = g;
+            ['100', '250', '500', '1000'].forEach(p => {
+                const btn = getEl('qp' + p);
+                if (btn) btn.classList.toggle('active-pill', p == g);
+            });
+            calc();
+        }
+
+        function setTargetWeightPill(g) {
+            getEl('targetWeight').value = g;
+            getEl('targetWeightSlider').value = g;
+            ['100', '250', '500', '1000'].forEach(p => {
+                const btn = getEl('tp' + p);
+                if (btn) btn.classList.toggle('active-pill', p == g);
+            });
+            calc();
+        }
+
+        function setTargetBudgetPill(b) {
+            getEl('targetBudget').value = b;
+            calc();
+        }
+
+        function stepTargetWeight(delta) {
+            const current = parseFloat(getEl('targetWeight').value) || 0;
+            const next = Math.max(1, current + delta);
+            setTargetWeightPill(next);
+        }
+
+        function stepTargetBudget(delta) {
+            const current = parseFloat(getEl('targetBudget').value) || 0;
+            const next = Math.max(1, current + delta);
+            getEl('targetBudget').value = next;
+            calc();
+        }
+
+        function addToBasket() {
+            const Pq = parseFloat(getEl('quotedPrice').value) || 0;
+            const Wq = Math.max(0.0001, parseFloat(getEl('quotedWeight').value) || 1);
+            const rate = Pq / Wq;
+            const name = getEl('itemName').value.trim() || 'Item';
+
+            let price = 0;
+            let weight = 0;
+
+            if (currentMode === 'weight') {
+                weight = parseFloat(getEl('targetWeight').value) || 0;
+                price = rate * weight;
+            } else {
+                price = parseFloat(getEl('targetBudget').value) || 0;
+                weight = Pq > 0 ? (price / Pq) * Wq : 0;
+            }
+
+            if (price <= 0 || weight <= 0) {
+                showToast("Invalid price or weight!");
+                return;
+            }
+
+            const item = {
+                id: Date.now(),
+                name: name,
+                weight: Math.round(weight * 10) / 10,
+                price: Math.round(price * 100) / 100
+            };
+
+            shoppingBasket.unshift(item);
+
+            // Increment generic item name e.g., "Item 1" -> "Item 2"
+            if (/^Item \d+$/i.test(name)) {
+                const num = parseInt(name.replace(/Item /i, '')) + 1;
+                getEl('itemName').value = 'Item ' + num;
+            }
+
+            renderBasket();
+            calc();
+            showToast(`Added ${item.name} (₹${item.price.toFixed(2)})`);
+        }
+
+        function removeBasketItem(id) {
+            shoppingBasket = shoppingBasket.filter(i => i.id !== id);
+            renderBasket();
+            showToast("Item removed");
+        }
+
+        function clearBasket() {
+            shoppingBasket = [];
+            renderBasket();
+            showToast("Basket cleared");
+        }
+
+        function renderBasket() {
+            const listContainer = getEl('basketList');
+            const count = shoppingBasket.length;
+
+            getEl('basketCountBadge').textContent = `${count} ${count === 1 ? 'Item' : 'Items'}`;
+
+            if (count === 0) {
+                listContainer.innerHTML = `
+                    <div style="text-align: center; padding: 14px; color: var(--text-muted); font-size: 11px; font-weight: 600;">
+                        Basket is empty.
+                    </div>
+                `;
+                getEl('basketSummaryBox').classList.add('hidden');
+                return;
+            }
+
+            getEl('basketSummaryBox').classList.remove('hidden');
+
+            let html = '';
+            let grandTotal = 0;
+
+            shoppingBasket.forEach(i => {
+                grandTotal += i.price;
+                html += `
+                    <div class="tally-item">
+                        <div>
+                            <div class="tally-item-name">${i.name}</div>
+                            <div class="tally-item-sub">${i.weight}g</div>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <span class="tally-item-price">₹${i.price.toFixed(2)}</span>
+                            <button class="btn-delete" onclick="removeBasketItem(${i.id})">✕</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            listContainer.innerHTML = html;
+            getEl('basketGrandTotal').textContent = `₹${grandTotal.toFixed(2)}`;
+        }
+
+        function copyBasketText() {
+            if (shoppingBasket.length === 0) return;
+            let sum = 0;
+            let text = "🛒 Shopping List:\n";
+            shoppingBasket.forEach((item, index) => {
+                sum += item.price;
+                text += `${index + 1}. ${item.name} (${item.weight}g) = ₹${item.price.toFixed(2)}\n`;
+            });
+            text += `Total Bill: ₹${sum.toFixed(2)}`;
+
+            const area = document.createElement('textarea');
+            area.value = text;
+            document.body.appendChild(area);
+            area.select();
+            document.execCommand('copy');
+            document.body.removeChild(area);
+            showToast("Copied list to clipboard!");
+        }
+
+        function resetDefaults() {
+            getEl('quotedPrice').value = 80;
+            getEl('quotedWeight').value = 250;
+            getEl('targetWeight').value = 150;
+            getEl('targetWeightSlider').value = 150;
+            getEl('targetBudget').value = 50;
+            getEl('itemName').value = 'Item 1';
+            getEl('roundingMode').value = 'exact';
+
+            setQuotedWeightPill(250);
+            calc();
+            showToast("Reset to default values");
+        }
+
+        function toggleTheme() {
+            const isLight = document.documentElement.classList.toggle('light-theme');
+            getEl('themeIcon').innerHTML = isLight
+                ? '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>'
+                : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+        }
+
+        let toastTimer;
+        function showToast(msg) {
+            const box = getEl('toastBox');
+            box.textContent = msg;
+            box.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => { box.classList.remove('show'); }, 2000);
+        }
+
+        // Initialize calculation on page load
+        window.onload = function() {
+            calc();
+        };
+    </script>
+</body>
+</html>

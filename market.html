@@ -689,14 +689,14 @@
                     <label class="label">Quoted Price</label>
                     <div class="input-wrapper">
                         <span class="input-prefix">₹</span>
-                        <input type="number" id="quotedPrice" value="80" step="any" min="0" class="has-prefix" oninput="calc()" onchange="calc()" onkeyup="calc()">
+                        <input type="number" id="quotedPrice" value="0" step="any" min="0" class="has-prefix" oninput="calc()" onchange="calc()" onkeyup="calc()">
                     </div>
                 </div>
 
                 <div class="input-group">
                     <label class="label">For Weight</label>
                     <div class="input-wrapper">
-                        <input type="number" id="quotedWeight" value="250" step="any" min="1" class="has-suffix" oninput="calc()" onchange="calc()" onkeyup="calc()">
+                        <input type="number" id="quotedWeight" value="100" step="any" min="1" class="has-suffix" oninput="calc()" onchange="calc()" onkeyup="calc()">
                         <span class="input-suffix">g</span>
                     </div>
                 </div>
@@ -724,14 +724,14 @@
                     <button class="btn-step" onclick="stepTargetWeight(-50)">-50g</button>
                     <button class="btn-step" onclick="stepTargetWeight(-10)">-10g</button>
                     <div class="input-wrapper" style="flex: 1;">
-                        <input type="number" id="targetWeight" value="150" min="1" step="any" class="stepper-input has-suffix" oninput="syncTargetFromInput()" onchange="syncTargetFromInput()" onkeyup="syncTargetFromInput()">
+                        <input type="number" id="targetWeight" value="100" min="1" step="any" class="stepper-input has-suffix" oninput="syncTargetFromInput()" onchange="syncTargetFromInput()" onkeyup="syncTargetFromInput()">
                         <span class="input-suffix">g</span>
                     </div>
                     <button class="btn-step" onclick="stepTargetWeight(10)">+10g</button>
                     <button class="btn-step" onclick="stepTargetWeight(50)">+50g</button>
                 </div>
 
-                <input type="range" id="targetWeightSlider" class="range-slider" min="1" max="2000" step="1" value="150" oninput="syncTargetFromSlider()" onchange="syncTargetFromSlider()">
+                <input type="range" id="targetWeightSlider" class="range-slider" min="1" max="2000" step="1" value="100" oninput="syncTargetFromSlider()" onchange="syncTargetFromSlider()">
                 <div class="range-labels">
                     <span>1g</span>
                     <span>500g</span>

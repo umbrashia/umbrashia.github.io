@@ -724,7 +724,7 @@
                     <button class="btn-step" onclick="stepTargetWeight(-50)">-50g</button>
                     <button class="btn-step" onclick="stepTargetWeight(-10)">-10g</button>
                     <div class="input-wrapper" style="flex: 1;">
-                        <input type="number" id="targetWeight" value="100" min="1" step="any" class="stepper-input has-suffix" oninput="syncTargetFromInput()" onchange="syncTargetFromInput()" onkeyup="syncTargetFromInput()">
+                        <input type="number" id="targetWeight" value="0" min="1" step="any" class="stepper-input has-suffix" oninput="syncTargetFromInput()" onchange="syncTargetFromInput()" onkeyup="syncTargetFromInput()">
                         <span class="input-suffix">g</span>
                     </div>
                     <button class="btn-step" onclick="stepTargetWeight(10)">+10g</button>
@@ -1124,7 +1124,7 @@
             getEl('quotedWeight').value = 100;
             getEl('targetWeight').value = 0;
             getEl('targetWeightSlider').value = 0;
-            getEl('targetBudget').value = 10;
+            getEl('targetBudget').value = 0;
             getEl('itemName').value = 'Item 1';
             getEl('roundingMode').value = 'exact';
 

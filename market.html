@@ -758,7 +758,7 @@
                     <button class="btn-step" onclick="stepTargetBudget(-10)">-10</button>
                     <div class="input-wrapper" style="flex: 1;">
                         <span class="input-prefix">₹</span>
-                        <input type="number" id="targetBudget" value="50" min="1" step="any" class="stepper-input has-prefix" oninput="calc()" onchange="calc()" onkeyup="calc()">
+                        <input type="number" id="targetBudget" value="10" min="1" step="any" class="stepper-input has-prefix" oninput="calc()" onchange="calc()" onkeyup="calc()">
                     </div>
                     <button class="btn-step" onclick="stepTargetBudget(10)">+10</button>
                     <button class="btn-step" onclick="stepTargetBudget(50)">+50</button>
@@ -1120,15 +1120,15 @@
         }
 
         function resetDefaults() {
-            getEl('quotedPrice').value = 80;
-            getEl('quotedWeight').value = 250;
-            getEl('targetWeight').value = 150;
-            getEl('targetWeightSlider').value = 150;
-            getEl('targetBudget').value = 50;
+            getEl('quotedPrice').value = 0;
+            getEl('quotedWeight').value = 0;
+            getEl('targetWeight').value = 0;
+            getEl('targetWeightSlider').value = 100;
+            getEl('targetBudget').value = 10;
             getEl('itemName').value = 'Item 1';
             getEl('roundingMode').value = 'exact';
 
-            setQuotedWeightPill(250);
+            setQuotedWeightPill(100);
             calc();
             showToast("Reset to default values");
         }

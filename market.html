@@ -703,8 +703,8 @@
             </div>
 
             <div class="pill-group">
-                <button class="pill" id="qp100" onclick="setQuotedWeightPill(100)">100g</button>
-                <button class="pill active-pill" id="qp250" onclick="setQuotedWeightPill(250)">250g</button>
+                <button class="pill active-pill" id="qp100" onclick="setQuotedWeightPill(100)">100g</button>
+                <button class="pill" id="qp250" onclick="setQuotedWeightPill(250)">250g</button>
                 <button class="pill" id="qp500" onclick="setQuotedWeightPill(500)">500g</button>
                 <button class="pill" id="qp1000" onclick="setQuotedWeightPill(1000)">1kg</button>
             </div>
@@ -1121,9 +1121,9 @@
 
         function resetDefaults() {
             getEl('quotedPrice').value = 0;
-            getEl('quotedWeight').value = 0;
+            getEl('quotedWeight').value = 100;
             getEl('targetWeight').value = 0;
-            getEl('targetWeightSlider').value = 100;
+            getEl('targetWeightSlider').value = 0;
             getEl('targetBudget').value = 10;
             getEl('itemName').value = 'Item 1';
             getEl('roundingMode').value = 'exact';
